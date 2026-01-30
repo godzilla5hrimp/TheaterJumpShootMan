@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://dpd5n25ohtpov"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ramr"]
+size = Vector2(2440, 112)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n665v"]
 size = Vector2(1920, 112)
 
@@ -9,17 +12,21 @@ size = Vector2(128, 856)
 [node name="BaseLevelCol" type="StaticBody2D" unique_id=1462689684]
 
 [node name="DownCol" type="CollisionShape2D" parent="." unique_id=616051666]
-position = Vector2(960, 1024)
-shape = SubResource("RectangleShape2D_n665v")
+position = Vector2(956, 1024)
+shape = SubResource("RectangleShape2D_6ramr")
 
 [node name="UpCol" type="CollisionShape2D" parent="." unique_id=2124402312]
 position = Vector2(960, 56)
 shape = SubResource("RectangleShape2D_n665v")
 
-[node name="LeftCol" type="CollisionShape2D" parent="." unique_id=1412348342]
+[node name="Walls" type="StaticBody2D" parent="." unique_id=309359338]
+collision_layer = 4
+collision_mask = 4
+
+[node name="LeftCol" type="CollisionShape2D" parent="Walls" unique_id=1412348342]
 position = Vector2(64, 540)
 shape = SubResource("RectangleShape2D_d0jf6")
 
-[node name="LeftCol2" type="CollisionShape2D" parent="." unique_id=1673206608]
+[node name="RightCol" type="CollisionShape2D" parent="Walls" unique_id=1673206608]
 position = Vector2(1856, 540)
 shape = SubResource("RectangleShape2D_d0jf6")

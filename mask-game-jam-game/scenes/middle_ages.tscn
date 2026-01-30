@@ -6,6 +6,7 @@
 [node name="MiddleAges" type="Node2D" unique_id=614183652]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1275396248]
+z_index = -1
 texture = ExtResource("1_n665v")
 centered = false
 

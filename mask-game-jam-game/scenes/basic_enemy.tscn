@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ba8rsth0mt51u"]
+
+[ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="1_3i4hm"]
+[ext_resource type="Script" uid="uid://dhnb1gf8melvb" path="res://scenes/basic_enemy.gd" id="1_md22f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md22f"]
+size = Vector2(128, 128)
+
+[node name="BasicEnemy" type="CharacterBody2D" unique_id=1638890085]
+collision_layer = 0
+script = ExtResource("1_md22f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=180272811]
+modulate = Color(1, 0.23000002, 0.23000002, 1)
+texture = ExtResource("1_3i4hm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185468729]
+shape = SubResource("RectangleShape2D_md22f")
