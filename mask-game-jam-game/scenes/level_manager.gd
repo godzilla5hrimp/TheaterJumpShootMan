@@ -10,5 +10,5 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("change_level"):
-		current_scene = puppet_scene.instantiate()
+		current_scene = noire_scene.instantiate()
 		get_tree().root.add_child.call_deferred(current_scene)
