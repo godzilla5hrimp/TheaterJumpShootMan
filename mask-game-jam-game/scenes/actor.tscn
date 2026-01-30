@@ -10,19 +10,17 @@ size = Vector2(30, 30)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ti3oo"]
 size = Vector2(28, 26)
 
-[node name="actor" type="Node"]
+[node name="Actor" type="CharacterBody2D"]
 script = ExtResource("1_x4c43")
 
-[node name="actorSprite" type="Sprite2D" parent="."]
+[node name="ActorSprite" type="Sprite2D" parent="."]
 scale = Vector2(30, 30)
 texture = SubResource("CanvasTexture_ti3oo")
 
-[node name="collisionMovement" type="Area2D" parent="."]
-
-[node name="collisionMovementShape" type="CollisionShape2D" parent="collisionMovement"]
+[node name="CollisionMovementShape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x4c43")
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 
-[node name="hitboxShape" type="CollisionShape2D" parent="hitbox"]
+[node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_ti3oo")

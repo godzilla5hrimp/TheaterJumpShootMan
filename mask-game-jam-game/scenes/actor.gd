@@ -1,22 +1,29 @@
-extends Node
-var healthbar = 100;
-var live = 3;
-var x = 0;
-var y = 0;
+extends CharacterBody2D
+var healthbar = 100
+var live = 3
+@export var speed = 200
+var screen_size
 
-
-func _input(event):
-	if event is InputEventKey and event.is_pressed():
-		checkInput(event)
-
-func checkInput(_event: InputEvent):
-		if Input.is_action_pressed("moveUp"):
-			y=y+30
-#			do stuff
-		elif Input.is_action_pressed("moveDown"):
-			y=y-30
-		elif Input.is_action_pressed("moveLeft"):
-			x=x-30
-		elif Input.is_action_pressed("moveRight"):
-			x=x+30
-		
+func _ready():
+	return
+	
+func _process(delta):
+	checkInput(delta)
+	screen_size = get_viewport().get_visible_rect().size
+	
+func checkInput(delta: float):
+	var velocity = Vector2.ZERO
+	if Input.is_action_pressed("moveUp"):
+		velocity.y -=delta
+		print('hello')
+	elif Input.is_action_pressed("moveDown"):
+		velocity.y +=delta
+	elif Input.is_action_pressed("moveLeft"):
+		velocity.x -=delta
+	elif Input.is_action_pressed("moveRight"):
+		velocity.x +=delta
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+	move_and_slide()
+	#get_node(".").position += velocity * delta
+	#get_node(".").position = get_node(".").position.clamp(Vector2.ZERO, screen_size)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="mask game jam game"
-run/main_scene="uid://1wcj6smvds3l"
+run/main_scene="uid://cqdoyb077hkns"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
