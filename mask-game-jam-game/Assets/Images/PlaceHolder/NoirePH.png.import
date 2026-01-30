@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkgaw6dbc7rix"
-path="res://.godot/imported/BagroundPH.png-a7dc180620c7e574eeb44b03ef758bbb.ctex"
+uid="uid://dodn1l5racq1m"
+path="res://.godot/imported/NoirePH.png-e8b9598e5c8a77c8eaaf288c8efd24d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/BagroundPH.png"
-dest_files=["res://.godot/imported/BagroundPH.png-a7dc180620c7e574eeb44b03ef758bbb.ctex"]
+source_file="res://Assets/Images/PlaceHolder/NoirePH.png"
+dest_files=["res://.godot/imported/NoirePH.png-e8b9598e5c8a77c8eaaf288c8efd24d3.ctex"]
 
 [params]
 
