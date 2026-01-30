@@ -12,10 +12,8 @@ func _process(delta):
 	screen_size = get_viewport().get_visible_rect().size
 	
 func checkInput(delta: float):
-	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("moveUp"):
 		velocity.y -=delta
-		print('hello')
 	elif Input.is_action_pressed("moveDown"):
 		velocity.y +=delta
 	elif Input.is_action_pressed("moveLeft"):
