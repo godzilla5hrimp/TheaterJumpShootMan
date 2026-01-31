@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bguwurtnved23" path="res://scenes/actor.gd" id="1_x4c43"]
 [ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="2_0qi0m"]
+[ext_resource type="PackedScene" uid="uid://c2elwltfrbcee" path="res://scenes/player_bullet.tscn" id="2_35erh"]
+[ext_resource type="PackedScene" uid="uid://pvvq5atvnfct" path="res://scenes/player_shield.tscn" id="3_w6j74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4c43"]
 size = Vector2(30, 30)
@@ -12,6 +14,8 @@ size = Vector2(74, 68)
 [node name="Actor" type="CharacterBody2D" unique_id=542046403]
 z_index = 100
 script = ExtResource("1_x4c43")
+player_bullet = ExtResource("2_35erh")
+player_shield = ExtResource("3_w6j74")
 
 [node name="MiddleAgesMask" type="Sprite2D" parent="." unique_id=1453285138]
 scale = Vector2(0.5, 0.5)
@@ -30,7 +34,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_0qi0m")
 
 [node name="CollisionMovementShape" type="CollisionShape2D" parent="." unique_id=542715325]
-unique_name_in_owner = true
 visible = false
 shape = SubResource("RectangleShape2D_x4c43")
 
@@ -42,5 +45,10 @@ position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_ti3oo")
 
 [node name="Timer" type="Timer" parent="." unique_id=1389631050]
+wait_time = 0.3
 
-[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[node name="ShieldTimer" type="Timer" parent="." unique_id=1305307786]
+wait_time = 5.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ShieldTimer" to="." method="_on_shield_timer_timeout"]
