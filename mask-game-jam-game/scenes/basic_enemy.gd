@@ -12,6 +12,7 @@ func _ready():
 		dir = 1
 	else:
 		dir = -1
+		$Sprite2D.flip_h = true
 
 
 func _physics_process(delta: float) -> void:

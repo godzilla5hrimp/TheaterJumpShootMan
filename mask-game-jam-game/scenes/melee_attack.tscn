@@ -2,37 +2,40 @@
 
 [ext_resource type="Script" uid="uid://bbm32awxmjfoi" path="res://scenes/melee_attack.gd" id="1_3ljer"]
 [ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="1_bd5lp"]
+[ext_resource type="AudioStream" uid="uid://k3w6y2w61ukl" path="res://Assets/Sound/woosh8.ogg" id="3_qm6g2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ljer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm6g2"]
 size = Vector2(129.333, 128)
 
-[node name="MeleeAttack" type="CharacterBody2D" unique_id=245934903]
+[node name="MeleeAttack" type="CharacterBody2D" unique_id=1731473929]
 scale = Vector2(0.75, 0.75)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_3ljer")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=299055863]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=817200230]
 visible = false
 shape = SubResource("RectangleShape2D_3ljer")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1883997628]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1538626793]
 modulate = Color(1, 0.898667, 0.24, 1)
 texture = ExtResource("1_bd5lp")
 
-[node name="CleanUp" type="Timer" parent="." unique_id=529754829]
+[node name="CleanUp" type="Timer" parent="." unique_id=855880955]
 wait_time = 0.2
 autostart = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1322562810]
-collision_layer = 5
-collision_mask = 3
+[node name="Area2D" type="Area2D" parent="." unique_id=954399201]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1563507357]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1663264541]
 position = Vector2(-0.666667, -1.33333)
 shape = SubResource("RectangleShape2D_qm6g2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1354811091]
+stream = ExtResource("3_qm6g2")
+bus = &"SoundEffects"
 
 [connection signal="timeout" from="CleanUp" to="." method="_on_clean_up_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
