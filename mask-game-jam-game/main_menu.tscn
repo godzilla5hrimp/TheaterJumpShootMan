@@ -2,8 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cfbrn8x16um5h" path="res://scenes/titlescreen1.png" id="1_jix8l"]
 [ext_resource type="Texture2D" uid="uid://2b6ryg8edck0" path="res://scenes/Start.Button.png" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://ctpk3si15ow32" path="res://scenes/Start.Button_Schwarz.png" id="3_glbon"]
 [ext_resource type="Script" uid="uid://b2kxjomamv1yp" path="res://start_button.gd" id="3_nlkkf"]
-[ext_resource type="Texture2D" uid="uid://n4wn6ftfndfq" path="res://scenes/End.Button.png" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://dx3rsc65bcslg" path="res://Quit_Game.Button.png" id="5_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://d00wpudgww0rc" path="res://Quit_Game.Button_Schwarz.png" id="6_qe12f"]
+[ext_resource type="Script" uid="uid://cxy6ak5j83s5f" path="res://end_game_button.gd" id="7_qe12f"]
 
 [node name="MainMenu" type="Control" unique_id=188981558]
 layout_mode = 3
@@ -20,19 +23,24 @@ texture = ExtResource("1_jix8l")
 
 [node name="StartButton" type="TextureButton" parent="." unique_id=1384752645]
 layout_mode = 0
-offset_left = 202.0
+offset_left = 197.0
 offset_top = 544.0
-offset_right = 1623.0
+offset_right = 1618.0
 offset_bottom = 724.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("2_glbon")
+texture_pressed = ExtResource("3_glbon")
+texture_hover = ExtResource("3_glbon")
 script = ExtResource("3_nlkkf")
 
-[node name="EndButton" type="TextureButton" parent="." unique_id=15309556]
+[node name="EndGameButton" type="TextureButton" parent="." unique_id=203865834]
 layout_mode = 0
-offset_left = 201.0
-offset_top = 688.0
-offset_right = 1622.0
+offset_left = 198.0
+offset_top = 687.0
+offset_right = 1620.0
 offset_bottom = 868.0
 scale = Vector2(0.3, 0.3)
-texture_normal = ExtResource("4_qe12f")
+texture_normal = ExtResource("5_nlkkf")
+texture_pressed = ExtResource("6_qe12f")
+texture_hover = ExtResource("6_qe12f")
+script = ExtResource("7_qe12f")
