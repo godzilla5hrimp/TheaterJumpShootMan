@@ -15,10 +15,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("SwapMaskForward"):
-			print ("movemask")
+			#print ("movemask")
 			MaskState += 1
 			if MaskState >=3: MaskState = 0
-			print(MaskState)
+			#print(MaskState)
 			if MaskState == 0:
 				$MaskSwapRedmask.position = PosCurrentMask
 				$MaskSwapRedmask.scale = SizeCurrentMask

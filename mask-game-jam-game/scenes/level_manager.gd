@@ -45,14 +45,14 @@ func _physics_process(delta: float) -> void:
 		#emit_signal("puppets")
 
 func change_level_noire():
-	print("enter noir")
+	#print("enter noir")
 	current_scene = noire_scene.instantiate()
 	get_tree().root.add_child.call_deferred(current_scene)
 	change_enemy_to_noire()
 	emit_signal("noire")
 
 func delete_level():
-	print("delete level")
+	#print("delete level")
 	if get_tree().root.get_node_or_null("MiddleAges"):
 		get_tree().root.get_node("MiddleAges").queue_free()
 	if get_tree().root.get_node_or_null("Noire"):
@@ -71,7 +71,7 @@ func _on_actor_middle_ages() -> void:
 
 func _on_actor_noire() -> void:
 	delete_level()
-	print("eneter noir")
+	#print("eneter noir")
 	current_scene = noire_scene.instantiate()
 	get_tree().root.add_child.call_deferred(current_scene)
 	change_enemy_to_noire()

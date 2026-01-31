@@ -93,7 +93,7 @@ func check_input(_delta: float):
 		can_shoot = false
 		$Timer.start()
 	if Input.is_action_pressed("player_shield") and current_mask == 0 and !have_shield:
-		print("shielded")
+		#print("shielded")
 		have_shield = true
 		current_shield = player_shield.instantiate()
 		#$ShieldTimer.start() 
