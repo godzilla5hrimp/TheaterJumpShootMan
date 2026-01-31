@@ -13,6 +13,8 @@ bus = &"Music"
 
 [node name="EnemyBullet" type="AudioStreamPlayer2D" parent="." unique_id=238552765]
 stream = ExtResource("2_hetdf")
+bus = &"SoundEffects"
 
 [node name="EnemyMelee" type="AudioStreamPlayer2D" parent="." unique_id=541879536]
 stream = ExtResource("3_jd6i5")
+bus = &"SoundEffects"
