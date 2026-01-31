@@ -41,6 +41,11 @@ func _on_attack_timer_timeout() -> void:
 	speed = 0
 	#print($ShooterTimer.is_stopped())
 	if shooter:
+  var attack = bullet_scene.instantiate()
+		attack.global_position = position
+		attack.dir = dir
+		get_tree().root.get_node("Main/LevelManager").add_child(attack)
+		get_tree().root.get_node("Main/MusicManager/EnemyBullet").play()
 		shooting = true
 		$ShooterTimer.start()
 	elif shooter == false:
