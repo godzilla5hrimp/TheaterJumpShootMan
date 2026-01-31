@@ -39,7 +39,7 @@ func _on_despawn_timeout() -> void:
 
 func _on_attack_timer_timeout() -> void:
 	speed = 0
-	print($ShooterTimer.is_stopped())
+	#print($ShooterTimer.is_stopped())
 	if shooter:
 		shooting = true
 		$ShooterTimer.start()
@@ -60,7 +60,3 @@ func _on_shooter_timer_timeout() -> void:
 	shooting = false;
 	shoot_count = 0
 	speed = 300.0
-
-
-func _on_distance_timer_timeout() -> void:
-	pass # Replace with function body.
