@@ -86,7 +86,9 @@ func check_input(_delta: float):
 		change_mask_texture()
 		mask_changed.emit(masks[current_mask])
 	if Input.is_action_pressed("player_shoot") && current_mask == 1 && can_shoot:
+		#print("SHOOTING AROUND")
 		var attack = player_bullet.instantiate()
+		print(attack)
 		attack.global_position = position + Vector2(dir*50, 0)
 		attack.dir = dir
 		get_tree().root.get_node("Main/LevelManager").add_child(attack)
