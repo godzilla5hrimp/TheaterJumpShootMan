@@ -18,24 +18,23 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Hp1" type="Button" parent="HeartsUI" unique_id=1905423534]
+[node name="Hp1" type="Sprite2D" parent="HeartsUI" unique_id=783907070]
 modulate = Color(1, 0, 0, 1)
-layout_mode = 0
-offset_right = 80.0
-offset_bottom = 76.0
+position = Vector2(50.000008, 50.000008)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_g6l6n")
 
-[node name="Hp2" type="Button" parent="HeartsUI" unique_id=1225614771]
-layout_mode = 0
-offset_left = 112.0
-offset_right = 192.0
-offset_bottom = 76.0
+[node name="Hp2" type="Sprite2D" parent="HeartsUI" unique_id=85383572]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(149.99998, 49.999996)
+scale = Vector2(0.6999999, 0.6999999)
+texture = ExtResource("3_g6l6n")
 
-[node name="Hp3" type="Button" parent="HeartsUI" unique_id=1967082834]
-layout_mode = 0
-offset_left = 217.0
-offset_top = 2.0
-offset_right = 297.0
-offset_bottom = 78.0
+[node name="Hp3" type="Sprite2D" parent="HeartsUI" unique_id=2031927806]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(250, 50)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("3_g6l6n")
 
 [node name="Mask Swap UI" type="Control" parent="." unique_id=1915098578]
 anchors_preset = 0
@@ -43,17 +42,17 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("2_3b2b5")
 
-[node name="MaskSwapRedmask" type="Sprite2D" parent="Mask Swap UI" unique_id=85383572]
+[node name="MaskSwapRedmask" type="Sprite2D" parent="Mask Swap UI" unique_id=68561277]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(1450, 124)
 texture = ExtResource("3_g6l6n")
 
-[node name="MaskSwapBluemask" type="Sprite2D" parent="Mask Swap UI" unique_id=783907070]
+[node name="MaskSwapBluemask" type="Sprite2D" parent="Mask Swap UI" unique_id=264515319]
 modulate = Color(0, 0, 1, 1)
 position = Vector2(1750, 123)
 texture = ExtResource("3_g6l6n")
 
-[node name="MaskSwapGreenmask" type="Sprite2D" parent="Mask Swap UI" unique_id=2031927806]
+[node name="MaskSwapGreenmask" type="Sprite2D" parent="Mask Swap UI" unique_id=1081555142]
 modulate = Color(0, 1, 0, 1)
 position = Vector2(1600, 99)
 scale = Vector2(1.4, 1.4)
