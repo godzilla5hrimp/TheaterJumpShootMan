@@ -1,27 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhgkkjslu63lv"]
+[gd_scene format=3 uid="uid://dhgkkjslu63lv"]
 
 [ext_resource type="Script" uid="uid://dunj5jc3omyaw" path="res://scenes/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bwys233at1lfe" path="res://scenes/level_manager.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bhka4d3sts6ts" path="res://scenes/enemy_spawner.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cqdoyb077hkns" path="res://scenes/actor.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://jsgas4rut0y5" path="res://UI.tscn" id="5_tbgi4"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1343641234]
 script = ExtResource("1_0wfyh")
 player_scene = ExtResource("4_jyhfs")
 
-[node name="LevelManager" parent="." instance=ExtResource("2_0wfyh")]
+[node name="LevelManager" parent="." unique_id=198447470 instance=ExtResource("2_0wfyh")]
 
-[node name="EnemySpawner" parent="." instance=ExtResource("3_sugp2")]
+[node name="EnemySpawner" parent="." unique_id=595399552 instance=ExtResource("3_sugp2")]
 
-[node name="Left" type="Marker2D" parent="."]
+[node name="Left" type="Marker2D" parent="." unique_id=1156608022]
 position = Vector2(-140, 920)
 
-[node name="Right" type="Marker2D" parent="."]
+[node name="Right" type="Marker2D" parent="." unique_id=68184681]
 position = Vector2(2053, 920)
 
-[node name="StartPos" type="Marker2D" parent="."]
+[node name="StartPos" type="Marker2D" parent="." unique_id=1848229950]
+position = Vector2(719, 351)
+
+[node name="Control" parent="." unique_id=192384161 instance=ExtResource("5_tbgi4")]
+
+[node name="Actor" parent="." unique_id=542046403 instance=ExtResource("4_jyhfs")]
 position = Vector2(719, 351)
 
 [connection signal="middle_ages" from="LevelManager" to="." method="_on_level_manager_middle_ages"]
 [connection signal="noire" from="LevelManager" to="." method="_on_level_manager_noire"]
 [connection signal="puppets" from="LevelManager" to="." method="_on_level_manager_puppets"]
+[connection signal="hit" from="Actor" to="." method="_on_actor_hit"]

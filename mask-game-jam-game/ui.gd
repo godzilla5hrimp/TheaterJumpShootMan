@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_playertest_heart_loss() -> void:
+func playertestheartloss() -> void:
 	HeartAmount -=1 
 	print (HeartAmount)
 	if HeartAmount == 2:

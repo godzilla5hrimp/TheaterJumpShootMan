@@ -1,10 +1,10 @@
 extends Control
 var MaskState := 1
-var PosCurrentMask = Vector2(955,0)
+var PosCurrentMask = Vector2(1900,0)
 var SizeCurrentMask = Vector2(120,120)
-var PosPreviousMask = Vector2(885,30)
+var PosPreviousMask = Vector2(850,30)
 var SizePreviousMask = Vector2(90,90)
-var PosNextMask = Vector2(1055,30)
+var PosNextMask = Vector2(1060,30)
 var SizeNextMask = Vector2(90,90)
 
 # Called when the node enters the scene tree for the first time.
