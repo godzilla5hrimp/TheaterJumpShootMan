@@ -12,8 +12,10 @@ func _ready() -> void:
 func spawn_player() :
 	return
 
+func child_hit():
+	print("child hit")
+
 func _process(_delta: float):
-	
 	if Input.is_action_just_pressed("close_button"):
 		get_tree().quit()
 

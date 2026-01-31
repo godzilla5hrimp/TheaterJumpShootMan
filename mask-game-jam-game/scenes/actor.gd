@@ -3,11 +3,13 @@ extends CharacterBody2D
 var healthbar = 100
 var lives = 3
 @export var speed = 400
+@export var player_bullet_scene: PackedScene
 var screen_size
 signal hit(lives, healthbar)
 signal mask_changed(mask_changed)
 var masks = ["block", "attack", "movement"]
 var current_mask = 0
+var dir = 1
 
 func _ready():	
 	print("masks size: ", masks.size())
@@ -54,8 +56,10 @@ func check_input(_delta: float):
 		velocity.y +=1
 	if Input.is_action_pressed("moveLeft"):
 		velocity.x -=1
+		dir = -1
 	if Input.is_action_pressed("moveRight"):
 		velocity.x +=1
+		dir = 1
 	if Input.is_action_just_pressed("change_mask_next"):
 		change_mask_next()
 		change_mask_texture()
@@ -79,3 +83,12 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 			lives = lives-1
 		hit.emit(lives, healthbar)
 	#		todo: add invinsibility timer after losing a life maybe?
+
+func _on_attack_timer_timeout() -> void:
+	print("shot")
+	if Input.is_action_pressed("player_shoot"):
+		print("shot")
+		var attack = player_bullet_scene.instantiate()
+		attack.global_position = position
+		attack.dir = dir
+		get_tree().root.get_node("Main/LevelManager").add_child(attack)
