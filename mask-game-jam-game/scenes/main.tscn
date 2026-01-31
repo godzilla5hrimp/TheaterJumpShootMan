@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bhka4d3sts6ts" path="res://scenes/enemy_spawner.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cqdoyb077hkns" path="res://scenes/actor.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://jsgas4rut0y5" path="res://UI.tscn" id="5_tbgi4"]
-[ext_resource type="PackedScene" path="res://scenes/music_manager.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dy7q8jysmslvg" path="res://scenes/music_manager.tscn" id="6_tefeu"]
 
 [node name="Main" type="Node2D" unique_id=1833633627]
 script = ExtResource("1_0wfyh")
@@ -14,7 +14,7 @@ player_scene = ExtResource("4_jyhfs")
 [node name="Control" parent="." unique_id=192384161 instance=ExtResource("5_tbgi4")]
 
 [node name="Actor" parent="." unique_id=542046403 instance=ExtResource("4_jyhfs")]
-position = Vector2(990, 484)
+position = Vector2(995, 484)
 
 [node name="LevelManager" parent="." unique_id=151953731 instance=ExtResource("2_0wfyh")]
 
