@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bqnn7bvunbej4"]
+
+[ext_resource type="Script" uid="uid://bbm32awxmjfoi" path="res://scenes/melee_attack.gd" id="1_3ljer"]
+[ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="1_bd5lp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ljer"]
+
+[node name="MeleeAttack" type="CharacterBody2D" unique_id=161868704]
+scale = Vector2(0.75, 0.75)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_3ljer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1918894399]
+shape = SubResource("RectangleShape2D_3ljer")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=823000240]
+modulate = Color(1, 0.8986667, 0.24000001, 1)
+texture = ExtResource("1_bd5lp")
+
+[node name="CleanUp" type="Timer" parent="." unique_id=393114624]
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="CleanUp" to="." method="_on_clean_up_timeout"]

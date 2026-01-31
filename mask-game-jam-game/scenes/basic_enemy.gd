@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @export var bullet_scene: PackedScene
+@export var melee_scene: PackedScene
+@export var shooter = false
 
 const SPEED = 300.0
 var dir = 0
@@ -22,12 +24,17 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_despawn_timeout() -> void:
-	print("I deleted myself!")
 	queue_free()
 
 
 func _on_attack_timer_timeout() -> void:
-	var bullet = bullet_scene.instantiate()
-	bullet.global_position = position
-	bullet.dir = dir
-	get_tree().root.get_node("Main/LevelManager").add_child(bullet)
+	if shooter:
+		var attack = bullet_scene.instantiate()
+		attack.global_position = position
+		attack.dir = dir
+		get_tree().root.get_node("Main/LevelManager").add_child(attack)
+	elif shooter == false:
+		var attack = melee_scene.instantiate()
+		attack.global_position = position
+		attack.global_position.x = attack.global_position.x + (dir*150)
+		get_tree().root.get_node("Main/LevelManager").add_child(attack)

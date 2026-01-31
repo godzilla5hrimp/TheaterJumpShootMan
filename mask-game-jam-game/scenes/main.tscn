@@ -16,3 +16,7 @@ position = Vector2(-140, 920)
 
 [node name="Right" type="Marker2D" parent="." unique_id=1812837221]
 position = Vector2(2053, 920)
+
+[connection signal="middle_ages" from="LevelManager" to="." method="_on_level_manager_middle_ages"]
+[connection signal="noire" from="LevelManager" to="." method="_on_level_manager_noire"]
+[connection signal="puppets" from="LevelManager" to="." method="_on_level_manager_puppets"]
