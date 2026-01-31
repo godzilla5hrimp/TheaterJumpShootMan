@@ -14,8 +14,6 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	
-	print("my Pos is: ", position.x)
-	
 	velocity.x = dir * SPEED
 	# Add the gravity.
 	if not is_on_floor():

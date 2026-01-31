@@ -7,8 +7,26 @@ var current_scene
 func _ready():
 	current_scene = middle_ages_scene.instantiate()
 	get_tree().root.add_child.call_deferred(current_scene)
-
+	print(current_scene.name)
+	
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("change_level"):
+	if Input.is_action_just_pressed("change_noire") and current_scene.name != "Noire":
+		delete_level()
 		current_scene = noire_scene.instantiate()
 		get_tree().root.add_child.call_deferred(current_scene)
+	elif Input.is_action_just_pressed("change_middle_ages") and current_scene.name != "MiddleAges":
+		delete_level()
+		current_scene = middle_ages_scene.instantiate()
+		get_tree().root.add_child.call_deferred(current_scene)
+	elif Input.is_action_just_pressed("change_puppets") and current_scene.name != "Puppets":
+		delete_level()
+		current_scene = puppet_scene.instantiate()
+		get_tree().root.add_child.call_deferred(current_scene)
+
+func delete_level():
+	if get_tree().root.get_node_or_null("MiddleAges"):
+		get_tree().root.get_node("MiddleAges").queue_free()
+	if get_tree().root.get_node_or_null("Noire"):
+		get_tree().root.get_node("Noire").queue_free()
+	if get_tree().root.get_node_or_null("Puppets"):
+		get_tree().root.get_node("Puppets").queue_free()

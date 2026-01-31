@@ -6,6 +6,7 @@
 [node name="Noire" type="Node2D" unique_id=1615763269]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=487645426]
+z_index = -1
 texture = ExtResource("1_s8ixi")
 centered = false
 
