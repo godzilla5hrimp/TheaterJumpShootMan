@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var healthbar = 100
-var lives = 3
+var lives = 6
 @export var speed = 400
 var screen_size
 signal hit(lives, healthbar)
@@ -79,8 +79,6 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	#print(area.get_parent().name)
 	if area.get_parent().name == "MeleeAttack" or area.get_parent().name == "EnemyBullet":
 		healthbar = healthbar-2
-		print(0)
-		if (healthbar <= 0):
-			lives = lives-1
+		lives = lives - 1
 		hit.emit(lives, healthbar)
 	#		todo: add invinsibility timer after losing a life maybe?

@@ -19,6 +19,12 @@ func _process(delta: float) -> void:
 
 func _on_actor_hit(lives: Variant, healthbar: Variant) -> void: 
 	print (lives)
+	if lives == 5:
+		$HeartsUI/Hp6.hide()
+	if lives == 4:
+		$HeartsUI/Hp5.hide()
+	if lives == 3:
+		$HeartsUI/Hp4.hide()
 	if lives == 2:
 		$HeartsUI/Hp3.hide()
 	if lives == 1:
