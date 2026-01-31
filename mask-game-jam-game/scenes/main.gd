@@ -35,4 +35,5 @@ func _on_level_manager_puppets() -> void:
 
 
 func _on_actor_hit(lives: Variant, healthbar: Variant) -> void:
-	print ("lose hp")
+	#print ("lose hp")
+	pass
