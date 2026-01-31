@@ -20,7 +20,7 @@ func _process(_delta: float):
 		get_tree().quit()
 
 func change_enemy_type():
-	$EnemySpawner.enemy_type = current_stage
+	$EnemySpawner.enemy_type = current_stage 
 
 func _on_level_manager_middle_ages() -> void:
 	current_stage = "middle_ages"
