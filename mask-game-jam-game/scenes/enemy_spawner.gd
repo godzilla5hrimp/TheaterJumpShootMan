@@ -16,13 +16,25 @@ func spawn_enemy():
 			enemy.shooter = true
 		else:
 			enemy.shooter = false
+	var choose_pos = rng.randi_range(0,2) 
+	
 	if left:
-		enemy.global_position = Vector2(-140.0, 920.0)
+		if choose_pos == 0:
+			enemy.global_position = Vector2(-140.0, 600.0)
+		if choose_pos == 1:
+			enemy.global_position = Vector2(-140.0, 700.0)
+		if choose_pos == 2:
+			enemy.global_position = Vector2(-140.0, 800.0)
+
 		left = false
 	elif left == false:
-		enemy.global_position = Vector2(2053.0, 920.0)
+		if choose_pos == 0:
+			enemy.global_position = Vector2(2053.0, 600.0)
+		if choose_pos == 1:
+			enemy.global_position = Vector2(2053.0, 700.0)
+		if choose_pos == 2:
+			enemy.global_position = Vector2(2053.0, 800.0)
 		left = true
 	get_tree().root.get_node("Main/LevelManager").add_child(enemy)
-
 func _on_timer_timeout() -> void:
 	spawn_enemy()

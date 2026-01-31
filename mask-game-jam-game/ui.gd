@@ -18,7 +18,6 @@ func _process(delta: float) -> void:
 
 
 func _on_actor_hit(lives: Variant, healthbar: Variant) -> void: 
-	print (lives)
 	if lives == 5:
 		$HeartsUI/Hp6.hide()
 	if lives == 4:
@@ -35,7 +34,7 @@ func _on_actor_hit(lives: Variant, healthbar: Variant) -> void:
 
 func _on_actor_mask_changed(mask_changed: Variant) -> void:
 	#eprint ("movemask")
-	print (mask_changed)
+	#print (mask_changed)
 	if mask_changed == "block":
 		$"Mask Swap UI/MaskSwapBlockmask".position = PosCurrentMask #block/Midevial
 		$"Mask Swap UI/MaskSwapBlockmask".scale = SizeCurrentMask #block/Midevial
