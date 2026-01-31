@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://jsgas4rut0y5"]
 
 [ext_resource type="Script" uid="uid://bira16qi4x7o0" path="res://ui.gd" id="1_3b2b5"]
+[ext_resource type="Texture2D" uid="uid://cmg3geawubpn3" path="res://maskheart.png" id="2_g6l6n"]
 [ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="3_g6l6n"]
 
 [node name="Control" type="Control" unique_id=192384161]
@@ -19,39 +20,39 @@ offset_bottom = 40.0
 
 [node name="Hp1" type="Sprite2D" parent="HeartsUI" unique_id=783907070]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(50.000008, 50.000008)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_g6l6n")
+position = Vector2(50, 20)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
 
 [node name="Hp2" type="Sprite2D" parent="HeartsUI" unique_id=85383572]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(149.99998, 49.999996)
-scale = Vector2(0.6999999, 0.6999999)
-texture = ExtResource("3_g6l6n")
+position = Vector2(150, 20)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
 
 [node name="Hp3" type="Sprite2D" parent="HeartsUI" unique_id=2031927806]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(250, 50)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_g6l6n")
+position = Vector2(250, 20)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
 
 [node name="Hp4" type="Sprite2D" parent="HeartsUI" unique_id=748881283]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(350, 50)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_g6l6n")
+position = Vector2(350, 20)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
 
 [node name="Hp5" type="Sprite2D" parent="HeartsUI" unique_id=1288051078]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(450, 50)
-scale = Vector2(0.6999999, 0.6999999)
-texture = ExtResource("3_g6l6n")
+position = Vector2(450, 20)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
 
 [node name="Hp6" type="Sprite2D" parent="HeartsUI" unique_id=1009091489]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(550, 50)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_g6l6n")
+position = Vector2(550, 20)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
 
 [node name="Mask Swap UI" type="Control" parent="." unique_id=1915098578]
 anchors_preset = 0
