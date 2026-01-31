@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://jsgas4rut0y5"]
+
+[ext_resource type="Script" uid="uid://bks67doeiqthw" path="res://hearts_ui.gd" id="1_3b2b5"]
+[ext_resource type="Script" uid="uid://vlimylivekbq" path="res://mask_swap_ui.gd" id="2_3b2b5"]
+
+[node name="Control" type="Control" unique_id=192384161]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeartsUI" type="Control" parent="." unique_id=1798689132]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3b2b5")
+
+[node name="Hp1" type="Button" parent="HeartsUI" unique_id=1905423534]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 76.0
+
+[node name="Hp2" type="Button" parent="HeartsUI" unique_id=1225614771]
+layout_mode = 0
+offset_left = 112.0
+offset_right = 192.0
+offset_bottom = 76.0
+
+[node name="Hp3" type="Button" parent="HeartsUI" unique_id=1967082834]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 2.0
+offset_right = 297.0
+offset_bottom = 78.0
+
+[node name="Mask Swap UI" type="Control" parent="." unique_id=1915098578]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_3b2b5")
+
+[node name="MaskSwapRedmask" type="Button" parent="Mask Swap UI" unique_id=1050426640]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 955.0
+offset_right = 1055.0
+offset_bottom = 100.0
+
+[node name="MaskSwapBluemask" type="Button" parent="Mask Swap UI" unique_id=97503093]
+modulate = Color(0, 0, 1, 1)
+layout_mode = 0
+offset_left = 885.0
+offset_top = 30.0
+offset_right = 955.0
+offset_bottom = 100.0
+
+[node name="MaskSwapGreenmask" type="Button" parent="Mask Swap UI" unique_id=986822504]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 1055.0
+offset_top = 30.0
+offset_right = 1125.0
+offset_bottom = 100.0
