@@ -2,6 +2,7 @@ extends Node2D
 @export var middle_ages_scene: PackedScene
 @export var noire_scene: PackedScene
 @export var puppet_scene: PackedScene
+@export var player_scene: PackedScene
 
 signal puppets
 signal middle_ages
@@ -11,6 +12,8 @@ var current_scene
 func _ready():
 	current_scene = middle_ages_scene.instantiate()
 	get_tree().root.add_child.call_deferred(current_scene)
+	var player = player_scene.instantiate()
+	current_scene.add_child(player)
 	print(current_scene.name)
 	
 

@@ -26,3 +26,5 @@ shape = SubResource("RectangleShape2D_x4c43")
 
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_ti3oo")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

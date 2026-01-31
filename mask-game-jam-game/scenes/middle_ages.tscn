@@ -1,13 +1,13 @@
-[gd_scene format=3 uid="uid://cnjmigs01ytt3"]
+[gd_scene load_steps=3 format=3 uid="uid://cnjmigs01ytt3"]
 
 [ext_resource type="Texture2D" uid="uid://dkgaw6dbc7rix" path="res://Assets/Images/PlaceHolder/BackgroundPH.png" id="1_n665v"]
 [ext_resource type="PackedScene" uid="uid://dpd5n25ohtpov" path="res://scenes/base_level_col.tscn" id="2_d0jf6"]
 
-[node name="MiddleAges" type="Node2D" unique_id=614183652]
+[node name="MiddleAges" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1275396248]
+[node name="Background" type="Sprite2D" parent="."]
 z_index = -1
 texture = ExtResource("1_n665v")
 centered = false
 
-[node name="BaseLevelCol" parent="." unique_id=1462689684 instance=ExtResource("2_d0jf6")]
+[node name="BaseLevelCol" parent="." instance=ExtResource("2_d0jf6")]
