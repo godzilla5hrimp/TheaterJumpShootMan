@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dpd5n25ohtpov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ramr"]
-size = Vector2(2440, 112)
+size = Vector2(2440, 184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n665v"]
 size = Vector2(1920, 112)
@@ -12,7 +12,7 @@ size = Vector2(128, 856)
 [node name="BaseLevelCol" type="StaticBody2D" unique_id=1462689684]
 
 [node name="DownCol" type="CollisionShape2D" parent="." unique_id=616051666]
-position = Vector2(956, 1024)
+position = Vector2(956, 988)
 shape = SubResource("RectangleShape2D_6ramr")
 
 [node name="UpCol" type="CollisionShape2D" parent="." unique_id=2124402312]

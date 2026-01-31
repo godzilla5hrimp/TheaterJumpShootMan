@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://ba8rsth0mt51u"]
 
-[ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="1_3i4hm"]
 [ext_resource type="Script" uid="uid://dhnb1gf8melvb" path="res://scenes/basic_enemy.gd" id="1_md22f"]
 [ext_resource type="PackedScene" uid="uid://d6glksavwbwc" path="res://scenes/enemy_bullet.tscn" id="2_fn5nn"]
 [ext_resource type="PackedScene" uid="uid://bqnn7bvunbej4" path="res://scenes/melee_attack.tscn" id="3_cuegt"]
+[ext_resource type="Texture2D" uid="uid://b4lovuxv4q7uc" path="res://Assets/Images/character/NoireEnemy.png" id="4_cuegt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md22f"]
-size = Vector2(128, 128)
+size = Vector2(224, 312)
 
 [node name="BasicEnemy" type="CharacterBody2D" unique_id=1638890085 groups=["enemies"]]
 collision_layer = 0
@@ -15,10 +15,12 @@ bullet_scene = ExtResource("2_fn5nn")
 melee_scene = ExtResource("3_cuegt")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=180272811]
-modulate = Color(1, 0.23000002, 0.23000002, 1)
-texture = ExtResource("1_3i4hm")
+texture = ExtResource("4_cuegt")
+region_enabled = true
+region_rect = Rect2(1760, 616, 224, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185468729]
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_md22f")
 
 [node name="Despawn" type="Timer" parent="." unique_id=347487592]
