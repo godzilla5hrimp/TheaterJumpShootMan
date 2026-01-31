@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bq8w4x3jufsie"]
+
+[ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://cfao2icubysdi" path="res://playertest.tscn" id="2_0e48y"]
+[ext_resource type="PackedScene" uid="uid://jsgas4rut0y5" path="res://UI.tscn" id="3_epypp"]
+
+[node name="Node2D" type="Node2D" unique_id=581700810]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=897218957]
+position = Vector2(604.00006, 317)
+scale = Vector2(10.21875, 5.8125)
+texture = ExtResource("1_wtcfe")
+
+[node name="playertest" parent="." unique_id=1914100105 instance=ExtResource("2_0e48y")]
+position = Vector2(2, 2)
+
+[node name="Control" parent="." unique_id=192384161 instance=ExtResource("3_epypp")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="HeartLoss" from="playertest" to="Control" method="_on_playertest_heart_loss"]
