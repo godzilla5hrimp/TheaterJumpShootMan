@@ -1,11 +1,11 @@
 extends Control
 var MaskState := 1
-var PosCurrentMask = Vector2(1900,0)
-var SizeCurrentMask = Vector2(120,120)
-var PosPreviousMask = Vector2(850,30)
-var SizePreviousMask = Vector2(90,90)
-var PosNextMask = Vector2(1060,30)
-var SizeNextMask = Vector2(90,90)
+var PosCurrentMask = Vector2(1600,110)
+var SizeCurrentMask = Vector2(1.4,1.4)
+var PosPreviousMask = Vector2(1450,130)
+var SizePreviousMask = Vector2(1,1)
+var PosNextMask = Vector2(1750,130)
+var SizeNextMask = Vector2(1,1)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,22 +21,22 @@ func _process(delta: float) -> void:
 			print(MaskState)
 			if MaskState == 0:
 				$MaskSwapRedmask.position = PosCurrentMask
-				$MaskSwapRedmask.size = SizeCurrentMask
+				$MaskSwapRedmask.scale = SizeCurrentMask
 				$MaskSwapBluemask.position = PosPreviousMask
-				$MaskSwapBluemask.size = SizePreviousMask
+				$MaskSwapBluemask.scale = SizePreviousMask
 				$MaskSwapGreenmask.position = PosNextMask
-				$MaskSwapGreenmask.size = SizeNextMask
+				$MaskSwapGreenmask.scale = SizeNextMask
 			if MaskState == 1:
 				$MaskSwapGreenmask.position = PosCurrentMask
-				$MaskSwapGreenmask.size = SizeCurrentMask
+				$MaskSwapGreenmask.scale = SizeCurrentMask
 				$MaskSwapRedmask.position = PosPreviousMask
-				$MaskSwapRedmask.size = SizePreviousMask
+				$MaskSwapRedmask.scale = SizePreviousMask
 				$MaskSwapBluemask.position = PosNextMask
-				$MaskSwapBluemask.size = SizeNextMask
+				$MaskSwapBluemask.scale = SizeNextMask
 			if MaskState == 2:
 				$MaskSwapBluemask.position = PosCurrentMask
-				$MaskSwapBluemask.size = SizeCurrentMask
+				$MaskSwapBluemask.scale = SizeCurrentMask
 				$MaskSwapGreenmask.position = PosPreviousMask
-				$MaskSwapGreenmask.size = SizePreviousMask
+				$MaskSwapGreenmask.scale = SizePreviousMask
 				$MaskSwapRedmask.position = PosNextMask
-				$MaskSwapRedmask.size = SizeNextMask
+				$MaskSwapRedmask.scale = SizeNextMask

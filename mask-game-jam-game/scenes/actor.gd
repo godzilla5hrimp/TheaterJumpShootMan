@@ -72,9 +72,9 @@ func check_input(_delta: float):
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	#print("hit")
-	print(area.get_parent().name)
+	#print(area.get_parent().name)
 	if area.get_parent().name == "MeleeAttack" or area.get_parent().name == "EnemyBullet":
-		healthbar = healthbar-25
+		healthbar = healthbar-2
 		print(0)
 		if (healthbar <= 0):
 			lives = lives-1

@@ -32,3 +32,4 @@ position = Vector2(719, 351)
 [connection signal="noire" from="LevelManager" to="." method="_on_level_manager_noire"]
 [connection signal="puppets" from="LevelManager" to="." method="_on_level_manager_puppets"]
 [connection signal="hit" from="Actor" to="." method="_on_actor_hit"]
+[connection signal="hit" from="Actor" to="Control" method="_on_actor_hit"]
