@@ -9,8 +9,10 @@ func spawn_enemy():
 	var enemy = enemy_scene.instantiate()
 	if enemy_type == "middle_ages":
 		enemy.shooter = false
+		enemy.change_style("middle_ages")
 	if enemy_type == "noire":
 		enemy.shooter = true
+		enemy.change_style("noire")
 	if enemy_type == "puppets":
 		if rng.randf_range(0, 100.0) < 49.0:
 			enemy.shooter = true

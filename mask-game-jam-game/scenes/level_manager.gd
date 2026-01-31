@@ -15,12 +15,14 @@ func change_enemy_to_middle_ages():
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	for enemy in enemies:
 		enemy.shooter = false
+		enemy.change_style("middle_ages")
 		
 
 func change_enemy_to_noire():
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	for enemy in enemies:
 		enemy.shooter = true
+		enemy.change_style("noire")
 
 
 func _physics_process(delta: float) -> void:

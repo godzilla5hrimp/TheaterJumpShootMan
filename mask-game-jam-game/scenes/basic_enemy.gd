@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var melee_scene: PackedScene
 @export var shooter = false
 
+@export var enemy_type = "middle_ages"
+
 var speed = 300.0
 var dir = 0
 
@@ -15,7 +17,8 @@ func _ready():
 		dir = 1
 	else:
 		dir = -1
-		$Sprite2D.flip_h = true
+		$MiddleAgesMelee.flip_h = true
+		$NoireShooter.flip_h = true
 
 
 func _physics_process(delta: float) -> void:
@@ -56,6 +59,14 @@ func _on_attack_timer_timeout() -> void:
 		attack.global_position.x = attack.global_position.x + (dir*150)
 		get_tree().root.get_node("Main/LevelManager").add_child(attack)
 		get_tree().root.get_node("Main/MusicManager/EnemyMelee").play()
+
+func change_style(enemy_type):
+	if enemy_type == "noire":
+		$MiddleAgesMelee.hide()
+		$NoireShooter.show()
+	if enemy_type == "middle_ages":
+		$MiddleAgesMelee.show()
+		$NoireShooter.hide()
 
 func _on_wait_timer_melee_timeout() -> void:
 	speed = 300.0
