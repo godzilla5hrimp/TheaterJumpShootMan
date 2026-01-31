@@ -14,9 +14,13 @@ size = Vector2(28, 26)
 position = Vector2(50, 50)
 script = ExtResource("1_x4c43")
 
-[node name="ActorSprite" type="Sprite2D" parent="."]
+[node name="MiddleAgesMask" type="Sprite2D" parent="."]
 scale = Vector2(30, 30)
 texture = SubResource("CanvasTexture_ti3oo")
+
+[node name="NoirMask" type="Sprite2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionMovementShape" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true

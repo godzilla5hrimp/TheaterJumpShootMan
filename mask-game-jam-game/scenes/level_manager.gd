@@ -13,6 +13,7 @@ func _ready():
 	current_scene = middle_ages_scene.instantiate()
 	get_tree().root.add_child.call_deferred(current_scene)
 	var player = player_scene.instantiate()
+	player.position = Vector2(150, 150)
 	current_scene.add_child(player)
 	print(current_scene.name)
 	
