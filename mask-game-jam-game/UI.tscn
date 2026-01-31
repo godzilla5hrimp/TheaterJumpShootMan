@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jsgas4rut0y5"]
 
-[ext_resource type="Script" uid="uid://bks67doeiqthw" path="res://hearts_ui.gd" id="1_3b2b5"]
+[ext_resource type="Script" uid="uid://bira16qi4x7o0" path="res://ui.gd" id="1_3b2b5"]
 [ext_resource type="Script" uid="uid://vlimylivekbq" path="res://mask_swap_ui.gd" id="2_3b2b5"]
 
 [node name="Control" type="Control" unique_id=192384161]
@@ -10,12 +10,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3b2b5")
 
 [node name="HeartsUI" type="Control" parent="." unique_id=1798689132]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_3b2b5")
 
 [node name="Hp1" type="Button" parent="HeartsUI" unique_id=1905423534]
 layout_mode = 0

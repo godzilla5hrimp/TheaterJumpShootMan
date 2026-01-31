@@ -20,3 +20,5 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[connection signal="HeartLoss" from="playertest" to="Control" method="_on_playertest_heart_loss"]
