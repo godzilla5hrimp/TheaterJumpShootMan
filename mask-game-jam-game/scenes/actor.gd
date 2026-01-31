@@ -24,6 +24,10 @@ func _ready():
 	return
 	
 func _physics_process(delta: float):
+	
+	print("lives ", lives)
+	#print("healthbar", healthbar)
+	
 	screen_size = get_viewport().get_visible_rect().size
 	check_input(delta)
 	if current_shield:
