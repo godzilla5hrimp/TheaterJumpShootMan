@@ -9,6 +9,10 @@ signal mask_changed(mask_changed)
 var masks = ["block", "attack", "movement"]
 var current_mask = 0
 
+signal puppets
+signal middle_ages
+signal noire
+
 func _ready():	
 	#print("masks size: ", masks.size())
 	change_mask_texture()
@@ -30,15 +34,17 @@ func change_mask_texture ():
 			$MiddleAgesMask.show()
 			$NoirMask.hide()
 			$PuppetMask.hide()
+			emit_signal("middle_ages")
 		1:
-			$MiddleAgesMask.show()
 			$MiddleAgesMask.hide()
 			$NoirMask.show()
 			$PuppetMask.hide()
+			emit_signal("noire")
 		2:
 			$MiddleAgesMask.hide()
 			$NoirMask.hide()
 			$PuppetMask.show()
+			emit_signal("puppets")
 
 func change_mask_previous ():
 	if (current_mask - 1 < 0):
@@ -64,8 +70,6 @@ func check_input(_delta: float):
 		change_mask_previous()
 		change_mask_texture()
 		mask_changed.emit(masks[current_mask])
-	if Input.is_action_just_pressed("change_noire"):
-		print("NOIRE")
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	move_and_slide()	

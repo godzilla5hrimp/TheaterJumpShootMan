@@ -46,6 +46,13 @@ func _physics_process(delta: float) -> void:
 		get_tree().root.add_child.call_deferred(current_scene)
 		emit_signal("puppets")
 
+func change_level_noire():
+	print("enter noir")
+	current_scene = noire_scene.instantiate()
+	get_tree().root.add_child.call_deferred(current_scene)
+	change_enemy_to_noire()
+	emit_signal("noire")
+
 func delete_level():
 	print("delete level")
 	if get_tree().root.get_node_or_null("MiddleAges"):
@@ -54,3 +61,27 @@ func delete_level():
 		get_tree().root.get_node("Noire").queue_free()
 	if get_tree().root.get_node_or_null("Puppets"):
 		get_tree().root.get_node("Puppets").queue_free()
+
+
+func _on_actor_middle_ages() -> void:
+	delete_level()
+	current_scene = middle_ages_scene.instantiate()
+	get_tree().root.add_child.call_deferred(current_scene)
+	change_enemy_to_middle_ages()
+	emit_signal("middle_ages")
+
+
+func _on_actor_noire() -> void:
+	delete_level()
+	print("eneter noir")
+	current_scene = noire_scene.instantiate()
+	get_tree().root.add_child.call_deferred(current_scene)
+	change_enemy_to_noire()
+	emit_signal("noire")
+
+
+func _on_actor_puppets() -> void:
+	delete_level()
+	current_scene = puppet_scene.instantiate()
+	get_tree().root.add_child.call_deferred(current_scene)
+	emit_signal("puppets")
