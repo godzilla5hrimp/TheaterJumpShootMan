@@ -14,7 +14,7 @@ player_scene = ExtResource("4_jyhfs")
 [node name="Control" parent="." unique_id=192384161 instance=ExtResource("5_tbgi4")]
 
 [node name="Actor" parent="." unique_id=542046403 instance=ExtResource("4_jyhfs")]
-position = Vector2(990, 484)
+position = Vector2(995, 484)
 
 [node name="LevelManager" parent="." unique_id=151953731 instance=ExtResource("2_0wfyh")]
 
@@ -33,7 +33,9 @@ position = Vector2(719, 351)
 
 [connection signal="hit" from="Actor" to="Control" method="_on_actor_hit"]
 [connection signal="mask_changed" from="Actor" to="." method="_on_actor_mask_changed"]
-[connection signal="mask_changed" from="Actor" to="Control" method="_on_actor_mask_changed"]
+[connection signal="middle_ages" from="Actor" to="LevelManager" method="_on_actor_middle_ages"]
+[connection signal="noire" from="Actor" to="LevelManager" method="_on_actor_noire"]
+[connection signal="puppets" from="Actor" to="LevelManager" method="_on_actor_puppets"]
 [connection signal="middle_ages" from="LevelManager" to="." method="_on_level_manager_middle_ages"]
 [connection signal="noire" from="LevelManager" to="." method="_on_level_manager_noire"]
 [connection signal="puppets" from="LevelManager" to="." method="_on_level_manager_puppets"]
