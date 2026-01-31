@@ -4,29 +4,26 @@
 [ext_resource type="PackedScene" uid="uid://bwys233at1lfe" path="res://scenes/level_manager.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bhka4d3sts6ts" path="res://scenes/enemy_spawner.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cqdoyb077hkns" path="res://scenes/actor.tscn" id="4_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://jsgas4rut0y5" path="res://UI.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dy7q8jysmslvg" path="res://scenes/music_manager.tscn" id="5_tbgi4"]
 
-[node name="Main" type="Node2D" unique_id=1343641234]
+[node name="Main" type="Node2D" unique_id=1833633627]
 script = ExtResource("1_0wfyh")
 player_scene = ExtResource("4_jyhfs")
 
-[node name="LevelManager" parent="." unique_id=198447470 instance=ExtResource("2_0wfyh")]
+[node name="LevelManager" parent="." unique_id=151953731 instance=ExtResource("2_0wfyh")]
 
-[node name="EnemySpawner" parent="." unique_id=595399552 instance=ExtResource("3_sugp2")]
+[node name="EnemySpawner" parent="." unique_id=1594025064 instance=ExtResource("3_sugp2")]
 
-[node name="Left" type="Marker2D" parent="." unique_id=1156608022]
+[node name="Left" type="Marker2D" parent="." unique_id=1065373660]
 position = Vector2(-140, 920)
 
-[node name="Right" type="Marker2D" parent="." unique_id=68184681]
+[node name="Right" type="Marker2D" parent="." unique_id=693273484]
 position = Vector2(2053, 920)
 
-[node name="StartPos" type="Marker2D" parent="." unique_id=1848229950]
+[node name="StartPos" type="Marker2D" parent="." unique_id=1801226996]
 position = Vector2(719, 351)
 
-[node name="Control" parent="." unique_id=192384161 instance=ExtResource("5_tbgi4")]
-
-[node name="Actor" parent="." unique_id=542046403 instance=ExtResource("4_jyhfs")]
-position = Vector2(719, 351)
+[node name="MusicManager" parent="." unique_id=1605363832 instance=ExtResource("5_tbgi4")]
 
 [connection signal="middle_ages" from="LevelManager" to="." method="_on_level_manager_middle_ages"]
 [connection signal="noire" from="LevelManager" to="." method="_on_level_manager_noire"]

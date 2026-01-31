@@ -1,6 +1,6 @@
 extends Node2D
 
-var current_stage = "middle_ages"
+var current_stage = "noire"
 @export var player_scene: PackedScene
 
 func _ready() -> void:
