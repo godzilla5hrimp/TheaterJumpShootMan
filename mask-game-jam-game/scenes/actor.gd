@@ -1,16 +1,17 @@
 extends CharacterBody2D
 
 var healthbar = 100
-var live = 3
+var lives = 3
 @export var speed = 400
 var screen_size
-signal hit
-signal mask_changed
+signal hit(lives, healthbar)
+signal mask_changed(mask_changed)
 var masks = ["block", "attack", "movement"]
 var current_mask = 0
 
 func _ready():
 	print("masks size: ", masks.size())
+	change_mask_texture()
 	return
 	
 func _physics_process(delta: float):
@@ -22,6 +23,25 @@ func change_mask_next ():
 		current_mask = 0
 	else:
 		current_mask = current_mask+1
+
+func change_mask_texture ():
+	match current_mask:
+		0:
+			print("changed to block")
+			$MiddleAgesMask.visible = true
+			$NoirMask.hide()
+			$PuppetMask.hide()
+		1:
+			print("changed to attack")
+			$MiddleAgesMask.visible = false
+			$MiddleAgesMask.hide()
+			$NoirMask.visible = true
+			$PuppetMask.hide()
+		2:
+			print("changed to speed")
+			$MiddleAgesMask.hide()
+			$NoirMask.hide()
+			$PuppetMask.visible = true
 
 func change_mask_previous ():
 	if (current_mask - 1 < 0):
@@ -41,21 +61,21 @@ func check_input(_delta: float):
 		velocity.x +=1
 	if Input.is_action_just_pressed("change_mask_next"):
 		change_mask_next()
-		mask_changed.emit()
-		print("mask ", masks[current_mask], " changed")
+		change_mask_texture()
+		mask_changed.emit(masks[current_mask])
 	if Input.is_action_just_pressed("change_mask_previous"):
 		change_mask_previous()
-		mask_changed.emit()
-		print("mask ", masks[current_mask], " changed")
+		change_mask_texture()
+		mask_changed.emit(masks[current_mask])
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	move_and_slide()
-	#position += velocity * delta
-#	todo: remove that, Ralph is handling out of bounds collision logic
 	var collision_shape_rect = get_node("%CollisionMovementShape").shape.get_rect()
 	position = position.clamp(collision_shape_rect.position, collision_shape_rect.end)
 
-
-func _on_hitbox_body_entered(body: Node2D) -> void:
+func _on_hitbox_body_entered(_body: Node2D) -> void:
 	healthbar =- 25
-	hit.emit()
+	if (healthbar <= 0):
+		lives = lives-1
+		hit.emit(lives, healthbar)
+#		todo: add invinsibility timer after losing a life maybe?
