@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bhka4d3sts6ts" path="res://scenes/enemy_spawner.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cqdoyb077hkns" path="res://scenes/actor.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://jsgas4rut0y5" path="res://UI.tscn" id="5_tbgi4"]
-[ext_resource type="PackedScene" path="res://scenes/music_manager.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://dy7q8jysmslvg" path="res://scenes/music_manager.tscn" id="6_tefeu"]
 
 [node name="Main" type="Node2D" unique_id=1833633627]
 script = ExtResource("1_0wfyh")
@@ -33,6 +33,7 @@ position = Vector2(719, 351)
 
 [connection signal="hit" from="Actor" to="Control" method="_on_actor_hit"]
 [connection signal="mask_changed" from="Actor" to="." method="_on_actor_mask_changed"]
+[connection signal="mask_changed" from="Actor" to="Control" method="_on_actor_mask_changed"]
 [connection signal="middle_ages" from="LevelManager" to="." method="_on_level_manager_middle_ages"]
 [connection signal="noire" from="LevelManager" to="." method="_on_level_manager_noire"]
 [connection signal="puppets" from="LevelManager" to="." method="_on_level_manager_puppets"]
