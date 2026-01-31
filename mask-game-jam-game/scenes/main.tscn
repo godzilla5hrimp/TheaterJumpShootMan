@@ -42,7 +42,10 @@ position = Vector2(961, 195.5)
 shape = SubResource("RectangleShape2D_tefeu")
 
 [connection signal="hit" from="Actor" to="Control" method="_on_actor_hit"]
-[connection signal="mask_changed" from="Actor" to="." method="_on_actor_mask_changed"]
+[connection signal="mask_changed" from="Actor" to="Control" method="_on_actor_mask_changed"]
+[connection signal="middle_ages" from="Actor" to="LevelManager" method="_on_actor_middle_ages"]
+[connection signal="noire" from="Actor" to="LevelManager" method="_on_actor_noire"]
+[connection signal="puppets" from="Actor" to="LevelManager" method="_on_actor_puppets"]
 [connection signal="middle_ages" from="LevelManager" to="." method="_on_level_manager_middle_ages"]
 [connection signal="noire" from="LevelManager" to="." method="_on_level_manager_noire"]
 [connection signal="puppets" from="LevelManager" to="." method="_on_level_manager_puppets"]

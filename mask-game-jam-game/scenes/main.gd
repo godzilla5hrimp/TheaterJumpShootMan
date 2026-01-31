@@ -36,7 +36,3 @@ func _on_level_manager_puppets() -> void:
 
 func _on_actor_hit(lives: Variant, healthbar: Variant) -> void:
 	print ("lose hp")
-
-
-func _on_actor_mask_changed(mask_changed: Variant) -> void:
-	pass # Replace with function body.

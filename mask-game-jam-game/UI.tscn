@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://jsgas4rut0y5"]
 
 [ext_resource type="Script" uid="uid://bira16qi4x7o0" path="res://ui.gd" id="1_3b2b5"]
-[ext_resource type="Script" uid="uid://vlimylivekbq" path="res://mask_swap_ui.gd" id="2_3b2b5"]
 [ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="3_g6l6n"]
 
 [node name="Control" type="Control" unique_id=192384161]
@@ -40,20 +39,19 @@ texture = ExtResource("3_g6l6n")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_3b2b5")
 
-[node name="MaskSwapRedmask" type="Sprite2D" parent="Mask Swap UI" unique_id=68561277]
+[node name="MaskSwapBlockmask" type="Sprite2D" parent="Mask Swap UI" unique_id=68561277]
 modulate = Color(1, 0, 0, 1)
-position = Vector2(1450, 124)
-texture = ExtResource("3_g6l6n")
-
-[node name="MaskSwapBluemask" type="Sprite2D" parent="Mask Swap UI" unique_id=264515319]
-modulate = Color(0, 0, 1, 1)
-position = Vector2(1750, 123)
-texture = ExtResource("3_g6l6n")
-
-[node name="MaskSwapGreenmask" type="Sprite2D" parent="Mask Swap UI" unique_id=1081555142]
-modulate = Color(0, 1, 0, 1)
-position = Vector2(1600, 99)
+position = Vector2(1600, 120)
 scale = Vector2(1.4, 1.4)
+texture = ExtResource("3_g6l6n")
+
+[node name="MaskSwapMovemask" type="Sprite2D" parent="Mask Swap UI" unique_id=264515319]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(1450, 140)
+texture = ExtResource("3_g6l6n")
+
+[node name="MaskSwapAttackmask" type="Sprite2D" parent="Mask Swap UI" unique_id=1081555142]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(1750, 140)
 texture = ExtResource("3_g6l6n")

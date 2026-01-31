@@ -15,7 +15,12 @@ var can_shoot = true
 var have_shield = false
 var current_shield = null
 
-func _ready():
+signal puppets
+signal middle_ages
+signal noire
+
+func _ready():	
+	#print("masks size: ", masks.size())
 	change_mask_texture()
 	return
 	
@@ -40,6 +45,7 @@ func change_mask_texture ():
 			$PuppetMask.hide()
 			speed = 400
 			print("shield")
+      emit_signal("middle_ages")
 		1:
 			can_shoot = true
 			$MiddleAgesMask.hide()
@@ -47,6 +53,7 @@ func change_mask_texture ():
 			$PuppetMask.hide()
 			speed = 400
 			print("attack")
+			emit_signal("noire")
 		2:
 			can_shoot = false
 			$MiddleAgesMask.hide()
@@ -54,6 +61,7 @@ func change_mask_texture ():
 			$PuppetMask.show()
 			speed = 800
 			print("speed")
+			emit_signal("puppets")
 
 func change_mask_previous ():
 	if (current_mask - 1 < 0):
@@ -81,26 +89,6 @@ func check_input(_delta: float):
 		change_mask_previous()
 		change_mask_texture()
 		mask_changed.emit(masks[current_mask])
-	if Input.is_action_just_pressed("change_noire"):
-		print("NOIRE")
-	if Input.is_action_pressed("player_shoot") && current_mask == 1 && can_shoot:
-		var attack = player_bullet.instantiate()
-		attack.global_position = position + Vector2(dir*50, 0)
-		attack.dir = dir
-		get_tree().root.get_node("Main/LevelManager").add_child(attack)
-		can_shoot = false
-		$Timer.start()
-	if Input.is_action_pressed("player_shield") and current_mask == 0 and !have_shield:
-		have_shield = true
-		current_shield = player_shield.instantiate()
-		#$ShieldTimer.start() 
-		current_shield.global_position = position + Vector2(dir*50, 0)
-		get_tree().root.get_node("Main/LevelManager").add_child(current_shield)
-	if not Input.is_action_pressed("player_shield") and have_shield:
-		have_shield = false
-		if current_shield:
-			current_shield.queue_free()
-			current_shield = null
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	if current_shield:
