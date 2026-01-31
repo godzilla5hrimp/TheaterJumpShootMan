@@ -32,7 +32,7 @@ position = Vector2(719, 351)
 [node name="MusicManager" parent="." unique_id=1605363832 instance=ExtResource("6_tefeu")]
 
 [connection signal="hit" from="Actor" to="Control" method="_on_actor_hit"]
-[connection signal="mask_changed" from="Actor" to="." method="_on_actor_mask_changed"]
+[connection signal="mask_changed" from="Actor" to="Control" method="_on_actor_mask_changed"]
 [connection signal="middle_ages" from="Actor" to="LevelManager" method="_on_actor_middle_ages"]
 [connection signal="noire" from="Actor" to="LevelManager" method="_on_actor_noire"]
 [connection signal="puppets" from="Actor" to="LevelManager" method="_on_actor_puppets"]
