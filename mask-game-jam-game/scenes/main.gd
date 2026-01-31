@@ -1,19 +1,19 @@
 extends Node2D
 
-var current_stage = "middle_ages"
+var current_stage = "noire"
 @export var player_scene: PackedScene
 
 func _ready() -> void:
-	var player = player_scene.instantiate()
-	player.position = $StartPos.position
-	get_tree().root.get_node("Main/").add_child(player)
-	print(player.position)
-
+	pass
+	#var player = player_scene.instantiate()
+	#player.position = $StartPos.position
+	#get_tree().root.get_node("Main/").add_child(player)
+	#print(player.position)
 func spawn_player() :
 	return
 
 func _process(_delta: float):
-	
+	#print(get_incoming_connections())
 	if Input.is_action_just_pressed("close_button"):
 		get_tree().quit()
 
@@ -32,3 +32,11 @@ func _on_level_manager_noire() -> void:
 func _on_level_manager_puppets() -> void:
 	current_stage = "puppets"
 	change_enemy_type()
+
+
+func _on_actor_hit(lives: Variant, healthbar: Variant) -> void:
+	print ("lose hp")
+
+
+func _on_actor_mask_changed(mask_changed: Variant) -> void:
+	pass # Replace with function body.

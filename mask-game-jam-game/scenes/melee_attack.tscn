@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bbm32awxmjfoi" path="res://scenes/melee_attack.gd" id="1_3ljer"]
 [ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="1_bd5lp"]
-[ext_resource type="AudioStream" uid="uid://k3w6y2w61ukl" path="res://Assets/Sound/woosh8.ogg" id="3_qm6g2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ljer"]
 
@@ -11,7 +10,7 @@ size = Vector2(129.333, 128)
 
 [node name="MeleeAttack" type="CharacterBody2D" unique_id=1731473929]
 scale = Vector2(0.75, 0.75)
-collision_layer = 4
+collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_3ljer")
 
@@ -33,8 +32,5 @@ autostart = true
 position = Vector2(-0.666667, -1.33333)
 shape = SubResource("RectangleShape2D_qm6g2")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1354811091]
-stream = ExtResource("3_qm6g2")
-bus = &"SoundEffects"
-
 [connection signal="timeout" from="CleanUp" to="." method="_on_clean_up_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

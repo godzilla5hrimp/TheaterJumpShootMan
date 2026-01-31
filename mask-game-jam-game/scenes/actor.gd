@@ -10,12 +10,12 @@ var masks = ["block", "attack", "movement"]
 var current_mask = 0
 
 func _ready():	
-	print("masks size: ", masks.size())
+	#print("masks size: ", masks.size())
 	change_mask_texture()
 	return
 	
 func _physics_process(delta: float):
-	#screen_size = get_viewport().get_visible_rect().size
+	screen_size = get_viewport().get_visible_rect().size
 	check_input(delta)
 	
 func change_mask_next ():
@@ -71,9 +71,10 @@ func check_input(_delta: float):
 	move_and_slide()	
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	print("hit")
-	if area.get_parent().name == "MelleeAttack" or area.get_parent().name == "EnemyBullet":
-		healthbar = healthbar-25
+	#print("hit")
+	#print(area.get_parent().name)
+	if area.get_parent().name == "MeleeAttack" or area.get_parent().name == "EnemyBullet":
+		healthbar = healthbar-2
 		print(0)
 		if (healthbar <= 0):
 			lives = lives-1
