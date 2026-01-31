@@ -17,7 +17,7 @@ size = Vector2(30, 30)
 size = Vector2(28, 26)
 
 [node name="Actor" type="CharacterBody2D"]
-position = Vector2(50, 50)
+z_index = 100
 script = ExtResource("1_x4c43")
 
 [node name="MiddleAgesMask" type="Sprite2D" parent="."]

@@ -27,21 +27,18 @@ func change_mask_next ():
 func change_mask_texture ():
 	match current_mask:
 		0:
-			print("changed to block")
-			$MiddleAgesMask.visible = true
+			$MiddleAgesMask.show()
 			$NoirMask.hide()
 			$PuppetMask.hide()
 		1:
-			print("changed to attack")
-			$MiddleAgesMask.visible = false
+			$MiddleAgesMask.show()
 			$MiddleAgesMask.hide()
-			$NoirMask.visible = true
+			$NoirMask.show()
 			$PuppetMask.hide()
 		2:
-			print("changed to speed")
 			$MiddleAgesMask.hide()
 			$NoirMask.hide()
-			$PuppetMask.visible = true
+			$PuppetMask.show()
 
 func change_mask_previous ():
 	if (current_mask - 1 < 0):
@@ -70,8 +67,6 @@ func check_input(_delta: float):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	move_and_slide()
-	var collision_shape_rect = get_node("%CollisionMovementShape").shape.get_rect()
-	position = position.clamp(collision_shape_rect.position, collision_shape_rect.end)
 
 func _on_hitbox_body_entered(_body: Node2D) -> void:
 	healthbar =- 25
