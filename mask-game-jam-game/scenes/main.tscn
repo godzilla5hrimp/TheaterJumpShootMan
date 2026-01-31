@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dhgkkjslu63lv"]
+
+[ext_resource type="Script" uid="uid://dunj5jc3omyaw" path="res://scenes/main.gd" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bwys233at1lfe" path="res://scenes/level_manager.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bhka4d3sts6ts" path="res://scenes/enemy_spawner.tscn" id="3_sugp2"]
+
+[node name="Main" type="Node2D" unique_id=272774573]
+script = ExtResource("1_0wfyh")
+
+[node name="LevelManager" parent="." unique_id=1881281603 instance=ExtResource("2_0wfyh")]
+
+[node name="EnemySpawner" parent="." unique_id=679851596 instance=ExtResource("3_sugp2")]
+
+[node name="Left" type="Marker2D" parent="." unique_id=1203258605]
+position = Vector2(-140, 920)
+
+[node name="Right" type="Marker2D" parent="." unique_id=1812837221]
+position = Vector2(2053, 920)
+
+[connection signal="middle_ages" from="LevelManager" to="." method="_on_level_manager_middle_ages"]
+[connection signal="noire" from="LevelManager" to="." method="_on_level_manager_noire"]
+[connection signal="puppets" from="LevelManager" to="." method="_on_level_manager_puppets"]
