@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
+@export var bullet_scene: PackedScene
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
 var dir = 0
+
 func _ready():
 	if position.x <= 0:
 		dir = 1
@@ -24,3 +24,10 @@ func _physics_process(delta: float) -> void:
 func _on_despawn_timeout() -> void:
 	print("I deleted myself!")
 	queue_free()
+
+
+func _on_attack_timer_timeout() -> void:
+	var bullet = bullet_scene.instantiate()
+	bullet.global_position = position
+	bullet.dir = dir
+	get_tree().root.get_node("Main/LevelManager").add_child(bullet)

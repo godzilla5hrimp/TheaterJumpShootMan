@@ -12,7 +12,7 @@ func spawn_enemy():
 	elif left == false:
 		enemy.global_position = Vector2(2053.0, 920.0)
 		left = true
-	get_tree().root.get_node("Main").add_child(enemy)
+	get_tree().root.get_node("Main/LevelManager").add_child(enemy)
 
 func _on_timer_timeout() -> void:
 	spawn_enemy()
