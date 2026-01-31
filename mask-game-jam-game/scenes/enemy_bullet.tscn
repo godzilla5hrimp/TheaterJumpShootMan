@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d6glksavwbwc"]
+[gd_scene load_steps=5 format=3 uid="uid://d6glksavwbwc"]
 
 [ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="1_d2qol"]
 [ext_resource type="Script" uid="uid://dxm3gwax322o0" path="res://scenes/enemy_bullet.gd" id="1_qx7rs"]
@@ -6,21 +6,31 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2qol"]
 size = Vector2(128, 128)
 
-[node name="EnemyBullet" type="CharacterBody2D" unique_id=1405792504]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx7rs"]
+size = Vector2(128, 126)
+
+[node name="EnemyBullet" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_qx7rs")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=344157672]
-modulate = Color(1, 0.30980393, 1, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.309804, 1, 1)
 texture = ExtResource("1_d2qol")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=203329588]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_d2qol")
 
-[node name="CleanUp" type="Timer" parent="." unique_id=359867187]
+[node name="CleanUp" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_qx7rs")
+
 [connection signal="timeout" from="CleanUp" to="." method="_on_clean_up_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

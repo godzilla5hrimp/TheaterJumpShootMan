@@ -1,14 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqdoyb077hkns"]
+[gd_scene load_steps=5 format=3 uid="uid://cqdoyb077hkns"]
 
 [ext_resource type="Script" uid="uid://bguwurtnved23" path="res://scenes/actor.gd" id="1_x4c43"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_ti3oo"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_x4c43"]
-specular_color = Color(1, 1, 0, 1)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_0qi0m"]
-specular_color = Color(1, 0, 1, 1)
+[ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="2_0qi0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4c43"]
 size = Vector2(30, 30)
@@ -22,18 +15,20 @@ script = ExtResource("1_x4c43")
 
 [node name="MiddleAgesMask" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(30, 30)
-texture = SubResource("CanvasTexture_ti3oo")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0qi0m")
 
 [node name="NoirMask" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(30, 30)
-texture = SubResource("CanvasTexture_x4c43")
+modulate = Color(1, 0.0941176, 1, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0qi0m")
 
 [node name="PuppetMask" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(30, 30)
-texture = SubResource("CanvasTexture_0qi0m")
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0qi0m")
 
 [node name="CollisionMovementShape" type="CollisionShape2D" parent="."]
 unique_name_in_owner = true
@@ -44,4 +39,6 @@ shape = SubResource("RectangleShape2D_x4c43")
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_ti3oo")
 
-[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

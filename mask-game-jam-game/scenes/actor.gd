@@ -9,7 +9,7 @@ signal mask_changed(mask_changed)
 var masks = ["block", "attack", "movement"]
 var current_mask = 0
 
-func _ready():
+func _ready():	
 	print("masks size: ", masks.size())
 	change_mask_texture()
 	return
@@ -64,13 +64,18 @@ func check_input(_delta: float):
 		change_mask_previous()
 		change_mask_texture()
 		mask_changed.emit(masks[current_mask])
+	if Input.is_action_just_pressed("change_noire"):
+		print("NOIRE")
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-	move_and_slide()
+	move_and_slide()	
 
-func _on_hitbox_body_entered(_body: Node2D) -> void:
-	healthbar =- 25
-	if (healthbar <= 0):
-		lives = lives-1
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	print("hit")
+	if area.get_parent().name == "MelleeAttack" or area.get_parent().name == "EnemyBullet":
+		healthbar = healthbar-25
+		print(0)
+		if (healthbar <= 0):
+			lives = lives-1
 		hit.emit(lives, healthbar)
-#		todo: add invinsibility timer after losing a life maybe?
+	#		todo: add invinsibility timer after losing a life maybe?
