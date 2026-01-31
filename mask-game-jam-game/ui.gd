@@ -5,7 +5,8 @@ var PosPreviousMask = Vector2(1450,130)
 var SizePreviousMask = Vector2(1,1)
 var PosNextMask = Vector2(1750,130)
 var SizeNextMask = Vector2(1,1)
-var Highscore = 0
+var Score := 0
+var ElapsedTime = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,9 +16,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ReduceUIHearts"):
-		Highscore +=10
+		Score +=10
 		#var HighscoreStr = str(Highscore)
-		$Label.text = "Highscore: " + str(Highscore)
+		$Label.text = "Highscore: " + str(Score)
 
 
 func _on_actor_hit(lives: Variant, healthbar: Variant) -> void: 
@@ -61,3 +62,9 @@ func _on_actor_mask_changed(mask_changed: Variant) -> void:
 		$"Mask Swap UI/MaskSwapBlockmask".position = PosNextMask
 		$"Mask Swap UI/MaskSwapBlockmask".scale = SizeNextMask
 		
+
+
+func _on_timer_timeout() -> void:
+	ElapsedTime +=1
+	Score += 5 + (.3*ElapsedTime)
+	$Label.text = "Score: " + str(Score)
