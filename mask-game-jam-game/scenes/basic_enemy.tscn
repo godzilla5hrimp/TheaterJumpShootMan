@@ -16,3 +16,9 @@ texture = ExtResource("1_3i4hm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185468729]
 shape = SubResource("RectangleShape2D_md22f")
+
+[node name="Despawn" type="Timer" parent="." unique_id=347487592]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]
