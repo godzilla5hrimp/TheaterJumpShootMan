@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c1lpjc08oyru7"]
+
+[ext_resource type="Texture2D" uid="uid://cfbrn8x16um5h" path="res://scenes/titlescreen1.png" id="1_jix8l"]
+[ext_resource type="Texture2D" uid="uid://2b6ryg8edck0" path="res://scenes/Start.Button.png" id="2_glbon"]
+[ext_resource type="Script" uid="uid://b2kxjomamv1yp" path="res://start_button.gd" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://n4wn6ftfndfq" path="res://scenes/End.Button.png" id="4_qe12f"]
+
+[node name="MainMenu" type="Control" unique_id=188981558]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Titlescreen1" type="Sprite2D" parent="." unique_id=980681676]
+position = Vector2(957.5, 537)
+scale = Vector2(1.649138, 1.6310976)
+texture = ExtResource("1_jix8l")
+
+[node name="StartButton" type="TextureButton" parent="." unique_id=1384752645]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 544.0
+offset_right = 1623.0
+offset_bottom = 724.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("2_glbon")
+script = ExtResource("3_nlkkf")
+
+[node name="EndButton" type="TextureButton" parent="." unique_id=15309556]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 688.0
+offset_right = 1622.0
+offset_bottom = 868.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("4_qe12f")
