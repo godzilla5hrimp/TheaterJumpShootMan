@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4lovuxv4q7uc" path="res://Assets/Images/character/NoireEnemy.png" id="4_cuegt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md22f"]
-size = Vector2(224, 312)
+size = Vector2(224, 144)
 
 [node name="BasicEnemy" type="CharacterBody2D" unique_id=1638890085 groups=["enemies"]]
 collision_layer = 0
@@ -20,7 +20,7 @@ region_enabled = true
 region_rect = Rect2(1760, 616, 224, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185468729]
-position = Vector2(0, 4)
+position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_md22f")
 
 [node name="Despawn" type="Timer" parent="." unique_id=347487592]
