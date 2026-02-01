@@ -3,13 +3,10 @@
 [ext_resource type="AudioStream" uid="uid://dulc2c0joonwa" path="res://Assets/Sound/BoppyNoir.ogg" id="1_tn5dr"]
 [ext_resource type="AudioStream" uid="uid://c2fg6nnotnf0j" path="res://Assets/Sound/laserSmall_004.ogg" id="2_hetdf"]
 [ext_resource type="AudioStream" uid="uid://k3w6y2w61ukl" path="res://Assets/Sound/woosh8.ogg" id="3_jd6i5"]
+[ext_resource type="AudioStream" uid="uid://b47imrfxxpr1h" path="res://Assets/Sound/SirBlockalot.ogg" id="4_xcw26"]
+[ext_resource type="AudioStream" uid="uid://bcqna0gp6nnh" path="res://Assets/Sound/CarnivalCrossfire.ogg" id="5_jbem4"]
 
 [node name="MusicManager" type="Node2D" unique_id=1605363832]
-
-[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1570474348]
-stream = ExtResource("1_tn5dr")
-autoplay = true
-bus = &"Music"
 
 [node name="EnemyBullet" type="AudioStreamPlayer2D" parent="." unique_id=238552765]
 stream = ExtResource("2_hetdf")
@@ -18,3 +15,18 @@ bus = &"SoundEffects"
 [node name="EnemyMelee" type="AudioStreamPlayer2D" parent="." unique_id=541879536]
 stream = ExtResource("3_jd6i5")
 bus = &"SoundEffects"
+
+[node name="NoireMusic" type="AudioStreamPlayer2D" parent="." unique_id=1570474348]
+stream = ExtResource("1_tn5dr")
+autoplay = true
+bus = &"NoireMusic"
+
+[node name="MiddleAgesMusic" type="AudioStreamPlayer2D" parent="." unique_id=1150773206]
+stream = ExtResource("4_xcw26")
+autoplay = true
+bus = &"MiddleAgesMusic"
+
+[node name="PuppetMusic" type="AudioStreamPlayer2D" parent="." unique_id=512503464]
+stream = ExtResource("5_jbem4")
+autoplay = true
+bus = &"PuppetMusic"

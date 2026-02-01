@@ -51,6 +51,12 @@ wait_time = 0.3
 [node name="ShieldTimer" type="Timer" parent="." unique_id=1305307786]
 wait_time = 5.0
 
+[node name="InvincibiltyTimer" type="Timer" parent="." unique_id=1061869965]
+wait_time = 0.6
+
+[node name="BlinkingTimer" type="Timer" parent="." unique_id=975470230]
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="ShieldTimer" to="." method="_on_shield_timer_timeout"]
+[connection signal="timeout" from="InvincibiltyTimer" to="." method="_on_invincibilty_timer_timeout"]
