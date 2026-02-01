@@ -24,24 +24,33 @@ func change_enemy_type():
 
 func _on_level_manager_middle_ages() -> void:
 	current_stage = "middle_ages"
-	$MusicManager/MiddleAgesMusic.play()
-	$MusicManager/NoireMusic.stop()
-	$MusicManager/PuppetMusic.stop()
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("MiddleAgesMusic"), false)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("NoireMusic"), true) 
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("PuppetMusic"), false) 
+	#$MusicManager/MiddleAgesMusic.play()
+	#$MusicManager/NoireMusic.stop()
+	#$MusicManager/PuppetMusic.stop()
 	change_enemy_type()
 
 func _on_level_manager_noire() -> void:
 	current_stage = "noire"
-	$MusicManager/MiddleAgesMusic.stop()
-	$MusicManager/NoireMusic.play()
-	$MusicManager/PuppetMusic.stop()
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("MiddleAgesMusic"), true)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("NoireMusic"), false) 
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("PuppetMusic"), true) 
+	#$MusicManager/MiddleAgesMusic.stop()
+	#$MusicManager/NoireMusic.play()
+	#$MusicManager/PuppetMusic.stop()
 	change_enemy_type()
 
 
 func _on_level_manager_puppets() -> void:
 	current_stage = "puppets"
-	$MusicManager/MiddleAgesMusic.stop()
-	$MusicManager/NoireMusic.stop()
-	$MusicManager/PuppetMusic.play()
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("MiddleAgesMusic"), true)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("NoireMusic"), true) 
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("PuppetMusic"), false) 
+	#$MusicManager/MiddleAgesMusic.stop()
+	#$MusicManager/NoireMusic.stop()
+	#$MusicManager/PuppetMusic.play()
 	change_enemy_type()
 
 

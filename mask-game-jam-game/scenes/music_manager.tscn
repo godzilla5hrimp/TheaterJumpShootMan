@@ -23,8 +23,10 @@ bus = &"NoireMusic"
 
 [node name="MiddleAgesMusic" type="AudioStreamPlayer2D" parent="." unique_id=1150773206]
 stream = ExtResource("4_xcw26")
+autoplay = true
 bus = &"MiddleAgesMusic"
 
 [node name="PuppetMusic" type="AudioStreamPlayer2D" parent="." unique_id=512503464]
 stream = ExtResource("5_jbem4")
+autoplay = true
 bus = &"PuppetMusic"
