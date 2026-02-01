@@ -81,7 +81,7 @@ func change_style(enemy_type):
 func calc_dmg():
 	health -= 1
 	if health <= 0:
-		get_tree().root.get_node("Main/Control").get_points_enemy()
+		get_tree().root.get_node("Main/UI").get_points_enemy()
 		queue_free()
 
 func _on_wait_timer_melee_timeout() -> void:
