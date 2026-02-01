@@ -1,13 +1,27 @@
 [gd_scene format=3 uid="uid://k3n75viryvrt"]
 
-[ext_resource type="Texture2D" uid="uid://bwns2mnj5nwpg" path="res://Assets/Images/PlaceHolder/PuppePH.png" id="1_nbj1p"]
+[ext_resource type="Texture2D" uid="uid://cjben3hcrhb8w" path="res://Assets/Images/Background/Buehne_Puppe_Hintergrund.png" id="1_cfkqg"]
 [ext_resource type="PackedScene" uid="uid://dpd5n25ohtpov" path="res://scenes/base_level_col.tscn" id="2_cfkqg"]
+[ext_resource type="Texture2D" uid="uid://bvf6xqq2dx45m" path="res://Assets/Images/Background/Buehne_Puppe_Vordergrund_002.png" id="2_g1qap"]
+[ext_resource type="Texture2D" uid="uid://cbc5yimf5n727" path="res://Assets/Images/Background/Buehne_Puppe_Busch_Ohne_Schatten.png" id="4_yhd1b"]
 
 [node name="Puppets" type="Node2D" unique_id=1874399844]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1189613990]
+[node name="Background" type="Sprite2D" parent="." unique_id=1189613990]
 z_index = -1
-texture = ExtResource("1_nbj1p")
+texture = ExtResource("1_cfkqg")
+centered = false
+
+[node name="Busch" type="Sprite2D" parent="." unique_id=1286227720]
+z_index = 4
+position = Vector2(1632, 652)
+texture = ExtResource("4_yhd1b")
+region_enabled = true
+region_rect = Rect2(1496, 520, 288, 272)
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1794303626]
+z_index = 10
+texture = ExtResource("2_g1qap")
 centered = false
 
 [node name="BaseLevelCol" parent="." unique_id=1462689684 instance=ExtResource("2_cfkqg")]

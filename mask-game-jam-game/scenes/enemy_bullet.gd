@@ -1,14 +1,15 @@
 extends CharacterBody2D
-
-
+var type = "Bullet"
 const SPEED = 600.0
-
 @export var dir = 1
+
 
 
 func _physics_process(delta: float) -> void:
 	
 	velocity.x = dir * SPEED
+	if dir <= 0:
+		$Sprite2D.flip_h = true
 	move_and_slide()
 
 
@@ -17,5 +18,5 @@ func _on_clean_up_timeout() -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent().name == "Actor":
+	if area.get_parent().name == "Actor" or area.get_parent().name == "PlayerShield":
 		queue_free()

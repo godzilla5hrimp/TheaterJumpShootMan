@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://jsgas4rut0y5"]
+
+[ext_resource type="Script" uid="uid://bira16qi4x7o0" path="res://ui.gd" id="1_3b2b5"]
+[ext_resource type="Texture2D" uid="uid://cmg3geawubpn3" path="res://maskheart.png" id="2_g6l6n"]
+[ext_resource type="Texture2D" uid="uid://0d83q7os6y7x" path="res://Assets/Images/Masken/Maske-Mittelalter-test.png" id="3_0mc3e"]
+[ext_resource type="Texture2D" uid="uid://d18lhpwwl1582" path="res://Assets/Images/Masken/Art_Maske_Puppe.png" id="4_2n5f6"]
+[ext_resource type="Texture2D" uid="uid://fnathg2snt3i" path="res://Score.Hintegrund.png" id="4_qui0h"]
+[ext_resource type="Texture2D" uid="uid://cfgj5oumktonn" path="res://Assets/Images/Masken/Schwarz_Wei_Maske.png" id="5_27c8x"]
+
+[node name="Control" type="Control" unique_id=192384161]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3b2b5")
+
+[node name="HeartsUI" type="Control" parent="." unique_id=1798689132]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hp1" type="Sprite2D" parent="HeartsUI" unique_id=783907070]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-7.0000153, 72)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
+
+[node name="Hp2" type="Sprite2D" parent="HeartsUI" unique_id=85383572]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(92.99999, 72)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
+
+[node name="Hp3" type="Sprite2D" parent="HeartsUI" unique_id=2031927806]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(193, 72)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
+
+[node name="Hp4" type="Sprite2D" parent="HeartsUI" unique_id=748881283]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(293, 72)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
+
+[node name="Hp5" type="Sprite2D" parent="HeartsUI" unique_id=1288051078]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(393, 72)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
+
+[node name="Hp6" type="Sprite2D" parent="HeartsUI" unique_id=1009091489]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(493, 72)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("2_g6l6n")
+
+[node name="Mask Swap UI" type="Control" parent="." unique_id=1915098578]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MaskSwapBlockmask" type="Sprite2D" parent="Mask Swap UI" unique_id=68561277]
+position = Vector2(1600, 120)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_0mc3e")
+region_enabled = true
+region_rect = Rect2(2840, 464, 544, 528)
+
+[node name="MaskSwapMovemask" type="Sprite2D" parent="Mask Swap UI" unique_id=264515319]
+position = Vector2(1450, 140)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_2n5f6")
+
+[node name="MaskSwapAttackmask" type="Sprite2D" parent="Mask Swap UI" unique_id=1081555142]
+position = Vector2(1750, 140)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_27c8x")
+region_enabled = true
+region_rect = Rect2(1832, 1456, 688, 904)
+
+[node name="Score_hintegrund" type="Sprite2D" parent="." unique_id=1399898029]
+position = Vector2(963.9375, 180)
+scale = Vector2(0.5307143, 0.57777786)
+texture = ExtResource("4_qui0h")
+
+[node name="HighscoreLabel" type="Label" parent="." unique_id=1131589711]
+layout_mode = 0
+offset_left = 866.0
+offset_top = 173.0
+offset_right = 1103.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 40
+text = "Highscore: 0"
+
+[node name="Label" type="Label" parent="." unique_id=627062407]
+layout_mode = 0
+offset_left = 869.0
+offset_top = 115.0
+offset_right = 1095.0
+offset_bottom = 198.0
+theme_override_font_sizes/font_size = 60
+text = "Score: 0"
+
+[node name="Timer" type="Timer" parent="Label" unique_id=1588047610]
+autostart = true
+
+[connection signal="timeout" from="Label/Timer" to="." method="_on_timer_timeout"]
