@@ -80,7 +80,7 @@ func change_style(enemy_type):
 		$NoireShooter.hide()
 		$Puppet.hide()
 	if enemy_type == "puppets":
-		$MiddleAgesMelee.show()
+		$MiddleAgesMelee.hide()
 		$NoireShooter.hide()
 		$Puppet.show()
 

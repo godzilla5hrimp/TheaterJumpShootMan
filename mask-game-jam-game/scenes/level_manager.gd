@@ -24,6 +24,12 @@ func change_enemy_to_noire():
 		enemy.shooter = true
 		enemy.change_style("noire")
 
+func change_enemy_to_puppets():
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	for enemy in enemies:
+		enemy.shooter = true
+		enemy.change_style("puppets")
+
 
 func _physics_process(delta: float) -> void:
 	pass
@@ -84,4 +90,5 @@ func _on_actor_puppets() -> void:
 	delete_level()
 	current_scene = puppet_scene.instantiate()
 	get_tree().root.add_child.call_deferred(current_scene)
+	change_enemy_to_puppets()
 	emit_signal("puppets")

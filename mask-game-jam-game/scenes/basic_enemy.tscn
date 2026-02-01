@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://dhnb1gf8melvb" path="res://scenes/basic_enemy.gd" id="1_md22f"]
 [ext_resource type="PackedScene" uid="uid://d6glksavwbwc" path="res://scenes/enemy_bullet.tscn" id="2_fn5nn"]
 [ext_resource type="PackedScene" uid="uid://bqnn7bvunbej4" path="res://scenes/melee_attack.tscn" id="3_cuegt"]
-[ext_resource type="Texture2D" uid="uid://b4lovuxv4q7uc" path="res://Assets/Images/character/NoireEnemy.png" id="4_cuegt"]
+[ext_resource type="Texture2D" uid="uid://0r3d7go48mfv" path="res://Assets/Images/character/BlackAndWhiteCharacter.png" id="4_ve544"]
 [ext_resource type="Texture2D" uid="uid://cissh3a6pcb83" path="res://Assets/Images/Ritter.png" id="5_wm70f"]
-[ext_resource type="Texture2D" uid="uid://cj2vohynw86un" path="res://Assets/Images/character/Puppet.png" id="6_ve544"]
+[ext_resource type="Texture2D" uid="uid://po7ess68k8tc" path="res://Assets/Images/character/puppenalle.png" id="6_ve544"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md22f"]
-size = Vector2(224, 144)
+size = Vector2(224, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wm70f"]
 size = Vector2(136, 248)
@@ -21,9 +21,9 @@ melee_scene = ExtResource("3_cuegt")
 
 [node name="NoireShooter" type="Sprite2D" parent="." unique_id=180272811]
 visible = false
-texture = ExtResource("4_cuegt")
+texture = ExtResource("4_ve544")
 region_enabled = true
-region_rect = Rect2(2016, 616, 216, 296)
+region_rect = Rect2(288, 0, 184, 256)
 
 [node name="MiddleAgesMelee" type="Sprite2D" parent="." unique_id=1825537361]
 visible = false
@@ -34,10 +34,10 @@ region_rect = Rect2(2984, 64, 1400, 2160)
 [node name="Puppet" type="Sprite2D" parent="." unique_id=924097517]
 texture = ExtResource("6_ve544")
 region_enabled = true
-region_rect = Rect2(48, 480, 176, 296)
+region_rect = Rect2(32, 0, 184, 256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185468729]
-position = Vector2(0, 72)
+position = Vector2(0, 108)
 shape = SubResource("RectangleShape2D_md22f")
 
 [node name="Despawn" type="Timer" parent="." unique_id=347487592]

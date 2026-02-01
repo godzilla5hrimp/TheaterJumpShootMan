@@ -1,6 +1,6 @@
 extends Control
 var PosCurrentMask = Vector2(1600,110)
-var SizeCurrentMask = Vector2(0.4,0.4)
+var SizeCurrentMask = Vector2(0.25,0.25)
 var PosPreviousMask = Vector2(1450,130)
 var SizePreviousMask = Vector2(0.2,0.2)
 var PosNextMask = Vector2(1750,130)
