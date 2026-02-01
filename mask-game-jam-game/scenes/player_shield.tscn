@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://pvvq5atvnfct"]
 
-[ext_resource type="Script" uid="uid://dwcgg7qyemdcl" path="res://scenes/player_shield.gd" id="1_macnl"]
+[ext_resource type="Script" uid="uid://bi2ovmiohjem8" path="res://scenes/player_shield.gd" id="1_macnl"]
 [ext_resource type="Texture2D" uid="uid://cbeea330p6707" path="res://Assets/Images/character/player_shield.png" id="2_macnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ljer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm6g2"]
-size = Vector2(129.333, 262.6667)
+size = Vector2(169.33334, 561.3334)
 
 [node name="PlayerShield" type="CharacterBody2D" unique_id=1731473929]
 z_index = 100
 scale = Vector2(0.75, 0.75)
-collision_layer = 8
-collision_mask = 2
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_macnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=817200230]
@@ -32,7 +32,7 @@ autostart = true
 [node name="Area2D" type="Area2D" parent="." unique_id=954399201]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1663264541]
-position = Vector2(-0.666667, 8.666659)
+position = Vector2(8.666666, 59.33334)
 shape = SubResource("RectangleShape2D_qm6g2")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
