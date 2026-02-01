@@ -7,6 +7,7 @@ var lives = 6
 @export var player_shield : PackedScene
 var screen_size
 signal hit(lives, healthbar)
+signal died
 signal mask_changed(mask_changed)
 var masks = ["block", "attack", "movement"]
 var current_mask = 0
@@ -126,6 +127,9 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		healthbar = healthbar-2
 		lives = lives - 1
 		hit.emit(lives, healthbar)
+		if (lives <= 0 ):
+			print("died")
+			died.emit()
 	#		todo: add invinsibility timer after losing a life maybe?
 		invicible = true
 		blink_modulate()
