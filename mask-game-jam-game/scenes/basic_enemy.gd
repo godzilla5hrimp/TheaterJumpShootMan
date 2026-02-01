@@ -74,9 +74,15 @@ func change_style(enemy_type):
 	if enemy_type == "noire":
 		$MiddleAgesMelee.hide()
 		$NoireShooter.show()
+		$Puppet.hide()
 	if enemy_type == "middle_ages":
 		$MiddleAgesMelee.show()
 		$NoireShooter.hide()
+		$Puppet.hide()
+	if enemy_type == "puppets":
+		$MiddleAgesMelee.show()
+		$NoireShooter.hide()
+		$Puppet.show()
 
 
 func calc_dmg():
