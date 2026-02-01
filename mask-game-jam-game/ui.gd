@@ -62,6 +62,9 @@ func _on_actor_mask_changed(mask_changed: Variant) -> void:
 		$"Mask Swap UI/MaskSwapBlockmask".scale = SizeNextMask
 		
 
+func get_points_enemy():
+	print("YAY POINTS")
+	Score += 10
 
 func _on_timer_timeout() -> void:
 	ElapsedTime +=1

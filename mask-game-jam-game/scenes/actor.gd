@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var type = "actor"
 var healthbar = 100
 var lives = 6
 @export var speed = 400
@@ -92,7 +92,6 @@ func check_input(_delta: float):
 	if Input.is_action_pressed("player_shoot") && current_mask == 1 && can_shoot:
 		#print("SHOOTING AROUND")
 		var attack = player_bullet.instantiate()
-		print(attack)
 		attack.global_position = position + Vector2(dir*50, 0)
 		attack.dir = dir
 		get_tree().root.get_node("Main/LevelManager").add_child(attack)

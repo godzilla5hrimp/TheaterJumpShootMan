@@ -9,6 +9,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md22f"]
 size = Vector2(224, 144)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm70f"]
+size = Vector2(136, 248)
+
 [node name="BasicEnemy" type="CharacterBody2D" unique_id=1638890085 groups=["enemies"]]
 collision_layer = 0
 script = ExtResource("1_md22f")
@@ -45,7 +48,17 @@ one_shot = true
 [node name="ShooterTimer" type="Timer" parent="." unique_id=1908833041]
 wait_time = 100.0
 
+[node name="Hitbox" type="Area2D" parent="." unique_id=1076694045]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=374010916]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_wm70f")
+debug_color = Color(0.9626915, 0.19594106, 0, 0.41960785)
+
 [connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="WaitTimerMelee" to="." method="_on_wait_timer_melee_timeout"]
 [connection signal="timeout" from="ShooterTimer" to="." method="_on_shooter_timer_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

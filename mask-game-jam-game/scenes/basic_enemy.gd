@@ -12,6 +12,8 @@ var dir = 0
 var shooting = false
 var shoot_count = 0
 
+var health = 2
+
 func _ready():
 	if position.x <= 0:
 		dir = 1
@@ -72,9 +74,22 @@ func change_style(enemy_type):
 		$MiddleAgesMelee.show()
 		$NoireShooter.hide()
 
+
+func calc_dmg():
+	health -= 1
+	if health <= 0:
+		get_tree().root.get_node("Main/Control").get_points_enemy()
+		queue_free()
+
 func _on_wait_timer_melee_timeout() -> void:
 	speed = 300.0
 
 
 func _on_shooter_timer_timeout() -> void:
 	speed = 300.0
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	if area.get_parent().type == "PlayerBullet":
+		#print("GOT HIT!")
+		calc_dmg()

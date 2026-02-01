@@ -39,6 +39,6 @@ func spawn_enemy():
 		left = true
 	get_tree().root.get_node("Main/LevelManager").add_child(enemy)
 func _on_timer_timeout() -> void:
-	print(get_tree().get_nodes_in_group("enemies").size())
+	#print(get_tree().get_nodes_in_group("enemies").size())
 	if get_tree().get_nodes_in_group("enemies").size() <= 10:
 		spawn_enemy()
