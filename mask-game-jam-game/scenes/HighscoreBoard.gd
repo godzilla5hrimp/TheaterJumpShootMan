@@ -22,7 +22,7 @@ func _ready() -> void:
 			print (highscores)
 			if highscores.size() >0:
 				scorearray = $".".get_children()
-				for i in highscores.size():
+				for i in 10:
 					print(i)
 					#scorearray[i].set_horizontal_alignment(1)
 					scorearray[i].text = "Highscore: " + str(highscores[i])
