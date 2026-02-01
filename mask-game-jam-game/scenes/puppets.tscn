@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://k3n75viryvrt"]
 
-[ext_resource type="Texture2D" uid="uid://bwns2mnj5nwpg" path="res://Assets/Images/PlaceHolder/PuppePH.png" id="1_nbj1p"]
+[ext_resource type="Texture2D" uid="uid://cjben3hcrhb8w" path="res://Assets/Images/Background/Buehne_Puppe_Hintergrund.png" id="1_cfkqg"]
 [ext_resource type="PackedScene" uid="uid://dpd5n25ohtpov" path="res://scenes/base_level_col.tscn" id="2_cfkqg"]
+[ext_resource type="Texture2D" uid="uid://oohy2y7qayau" path="res://Assets/Images/Background/Buehne_Puppe_Vordergrund.png" id="2_g1qap"]
 
 [node name="Puppets" type="Node2D" unique_id=1874399844]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1189613990]
+[node name="Background" type="Sprite2D" parent="." unique_id=1189613990]
 z_index = -1
-texture = ExtResource("1_nbj1p")
+texture = ExtResource("1_cfkqg")
+centered = false
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1794303626]
+texture = ExtResource("2_g1qap")
 centered = false
 
 [node name="BaseLevelCol" parent="." unique_id=1462689684 instance=ExtResource("2_cfkqg")]

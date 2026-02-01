@@ -23,7 +23,7 @@ texture = ExtResource("1_d2qol")
 shape = SubResource("RectangleShape2D_d2qol")
 
 [node name="CleanUp" type="Timer" parent="." unique_id=1238987220]
-wait_time = 5.0
+wait_time = 0.2
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2080996842]

@@ -35,15 +35,18 @@ func shoot_bullet():
 		get_tree().root.get_node("Main/LevelManager").add_child(attack)
 		get_tree().root.get_node("Main/MusicManager/EnemyBullet").play()
 		shoot_count += 1
+	if shoot_count > 3:
+		speed = 300
 
 func _on_despawn_timeout() -> void:
 	queue_free()
 
 
 func _on_attack_timer_timeout() -> void:
-	speed = 0
+	
 	#print($ShooterTimer.is_stopped())
 	if shooter:
+		speed = 0
 		var attack = bullet_scene.instantiate()
 		attack.global_position = position
 		attack.dir = dir
@@ -52,6 +55,7 @@ func _on_attack_timer_timeout() -> void:
 		shooting = true
 		$ShooterTimer.start()
 	elif shooter == false:
+		speed = 0
 		shooting = false
 		$WaitTimerMelee.start()
 		var attack = melee_scene.instantiate()
@@ -73,6 +77,4 @@ func _on_wait_timer_melee_timeout() -> void:
 
 
 func _on_shooter_timer_timeout() -> void:
-	shooting = false;
-	shoot_count = 0
 	speed = 300.0

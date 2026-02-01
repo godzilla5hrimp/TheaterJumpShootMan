@@ -31,7 +31,7 @@ position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_md22f")
 
 [node name="Despawn" type="Timer" parent="." unique_id=347487592]
-wait_time = 10.0
+wait_time = 15.0
 autostart = true
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=206793698]
@@ -43,7 +43,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="ShooterTimer" type="Timer" parent="." unique_id=1908833041]
-wait_time = 0.3
+wait_time = 100.0
 
 [connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
