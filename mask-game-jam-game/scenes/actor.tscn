@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cqdoyb077hkns"]
 
 [ext_resource type="Script" uid="uid://bguwurtnved23" path="res://scenes/actor.gd" id="1_x4c43"]
-[ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="2_0qi0m"]
 [ext_resource type="PackedScene" uid="uid://c57vtak1er1ga" path="res://scenes/player_bullet.tscn" id="2_35erh"]
 [ext_resource type="PackedScene" uid="uid://pvvq5atvnfct" path="res://scenes/player_shield.tscn" id="3_w6j74"]
+[ext_resource type="Texture2D" uid="uid://drcuo63v5inmi" path="res://Assets/Images/character/player_middleages.png" id="4_0jvkp"]
+[ext_resource type="Texture2D" uid="uid://cfxdj1l6o32m5" path="res://Assets/Images/character/player_bw.png" id="5_7i7yh"]
+[ext_resource type="Texture2D" uid="uid://bwec4rum444bt" path="res://Assets/Images/character/player_puppet.png" id="6_7i7yh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4c43"]
 size = Vector2(30, 30)
@@ -18,20 +20,18 @@ player_bullet = ExtResource("2_35erh")
 player_shield = ExtResource("3_w6j74")
 
 [node name="MiddleAgesMask" type="Sprite2D" parent="." unique_id=1453285138]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_0qi0m")
+visible = false
+position = Vector2(1, -23)
+texture = ExtResource("4_0jvkp")
 
 [node name="NoirMask" type="Sprite2D" parent="." unique_id=1902106214]
 visible = false
-modulate = Color(1, 0.0941176, 1, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_0qi0m")
+position = Vector2(0, -27)
+texture = ExtResource("5_7i7yh")
 
 [node name="PuppetMask" type="Sprite2D" parent="." unique_id=438455874]
-visible = false
-modulate = Color(1, 1, 0, 1)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_0qi0m")
+position = Vector2(-1, -28)
+texture = ExtResource("6_7i7yh")
 
 [node name="CollisionMovementShape" type="CollisionShape2D" parent="." unique_id=542715325]
 visible = false

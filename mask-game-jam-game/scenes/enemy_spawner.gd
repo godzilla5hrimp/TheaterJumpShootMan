@@ -14,6 +14,7 @@ func spawn_enemy():
 		enemy.shooter = true
 		enemy.change_style("noire")
 	if enemy_type == "puppets":
+		enemy.change_style("puppets")
 		if rng.randf_range(0, 100.0) < 49.0:
 			enemy.shooter = true
 		else:
