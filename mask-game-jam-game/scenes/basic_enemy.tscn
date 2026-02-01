@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://po7ess68k8tc" path="res://Assets/Images/character/puppenalle.png" id="6_ve544"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md22f"]
-size = Vector2(224, 144)
+size = Vector2(224, 72)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wm70f"]
 size = Vector2(136, 248)
@@ -37,7 +37,7 @@ region_enabled = true
 region_rect = Rect2(32, 0, 184, 256)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185468729]
-position = Vector2(0, 72)
+position = Vector2(0, 108)
 shape = SubResource("RectangleShape2D_md22f")
 
 [node name="Despawn" type="Timer" parent="." unique_id=347487592]
