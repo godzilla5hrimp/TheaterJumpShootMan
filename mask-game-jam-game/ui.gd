@@ -8,23 +8,44 @@ var SizeNextMask = Vector2(1,1)
 var Score := 0
 var ElapsedTime = 0
 var Highscore := 0
-var save_path = "user://variable.save"
+const SAVE_PATH := "user://highscores.json"
+const MAX_SCORES := 10
+var highscores: Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if FileAccess.file_exists(save_path):
-		var file = FileAccess.open(save_path, FileAccess.READ)
-		Highscore = file.get_var(Highscore)
-	$HighscoreLabel.text = "Highscore: " + str(Highscore)
+	if not FileAccess.file_exists(SAVE_PATH):
+		highscores = []
+		print ("no data")
+		return
+
+	var file := FileAccess.open(SAVE_PATH, FileAccess.READ)
+	var json_text := file.get_as_text()
+	print(json_text)
+	file.close()
+
+	var data = JSON.parse_string(json_text)
+	if data and data.has("highscores"):
+		highscores = data["highscores"]
+		highscores.sort()
+		print (highscores)
+		Highscore = highscores [-1]
+		$HighscoreLabel.text = "Highscore: " + str(Highscore)
+	else:
+		highscores = []
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ReduceUIHearts"):
-		if Score > Highscore:
-			Highscore = Score
-			var file = FileAccess.open(save_path, FileAccess.WRITE)
-			file.store_var(Highscore)
-			print("data saved")
+		highscores.append(Highscore)
+		var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+		var data := {
+			"highscores": highscores
+		}
+		print("data: ",data)
+		file.store_string(JSON.stringify(data))
+		file.close()
+		print("data saved")
 
 
 func _on_actor_hit(lives: Variant, healthbar: Variant) -> void: 
@@ -85,7 +106,11 @@ func _on_timer_timeout() -> void:
 		$HighscoreLabel.text = "Highscore: " + str(Score)
 	
 func change_highscore():
-	if Score > Highscore:
-		Highscore = Score
-	var file = FileAccess.open(save_path, FileAccess.WRITE)
-	file.store_var(Highscore)
+	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	var data := {
+			"highscores": highscores
+		}
+
+	file.store_string(JSON.stringify(data))
+	file.close()
+	print("data saved")
