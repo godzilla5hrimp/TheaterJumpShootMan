@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dwkuiyrsax85b"]
+
+[ext_resource type="Texture2D" uid="uid://r7rqhjvrimd7" path="res://Assets/Images/Background/Highscore.Button.png" id="1_bebeb"]
+[ext_resource type="Texture2D" uid="uid://bvxtrhqr8y8t6" path="res://Assets/Images/Background/Scoreborad.png" id="2_afqkp"]
+[ext_resource type="Script" uid="uid://chb8dyh6gdjv8" path="res://scenes/HighscoreBoard.gd" id="3_ijnr1"]
+
+[node name="HighscoreMenu" type="Control" unique_id=216897961]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1023.0
+offset_top = 101.0
+offset_right = 1023.0
+offset_bottom = 101.0
+
+[node name="HighscoreSign" type="Sprite2D" parent="." unique_id=1085134788]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_bebeb")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1700926069]
+layout_mode = 0
+offset_left = -779.0
+offset_top = 97.0
+offset_right = 622.0
+offset_bottom = 982.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=245671368]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/VBoxContainer" unique_id=937954640]
+layout_mode = 2
+texture = ExtResource("2_afqkp")
+expand_mode = 4
+script = ExtResource("3_ijnr1")
+
+[node name="Score1" type="Label" parent="ScrollContainer/VBoxContainer/TextureRect" unique_id=776744163]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 20.0
+offset_right = 832.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 49
+text = "Score"
