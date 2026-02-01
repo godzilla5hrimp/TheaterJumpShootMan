@@ -8,10 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bna3echvxor73" path="res://scenes/Quit_Game.Button.png" id="5_qe12f"]
 [ext_resource type="Texture2D" uid="uid://hsqkq0bxoxkq" path="res://Assets/Images/Background/Highscore.Button_Schwarz.png" id="6_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://dddljexov2a7i" path="res://scenes/Quit_Game.Button_Schwarz.png" id="6_8qtwp"]
-
-[ext_resource type="Texture2D" uid="uid://bht3vw4vt3jhl" path="res://Assets/Images/Scene.Breaker_Wei_Logo.png" id="8_dy7ct"]
-[ext_resource type="Script" uid="uid://bih6hpihxdqke" path="res://highscore_button.gd" id="7_j5v2v"]
+[ext_resource type="Script" path="res://highscore_button.gd" id="7_j5v2v"]
 [ext_resource type="Script" uid="uid://cvvap7ylsqpow" path="res://end_game_button.gd" id="7_qe12f"]
+[ext_resource type="Texture2D" uid="uid://bht3vw4vt3jhl" path="res://Assets/Images/Scene.Breaker_Wei_Logo.png" id="8_dy7ct"]
 
 [node name="MainMenu" type="Control" unique_id=188981558]
 layout_mode = 3

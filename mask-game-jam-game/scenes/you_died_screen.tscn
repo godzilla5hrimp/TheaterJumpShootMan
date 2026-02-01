@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cphy7p4rk6xy2" path="res://Assets/Images/MainMenu.Button_Weiß.png" id="2_cwbie"]
 [ext_resource type="Script" uid="uid://bkfb7iw0rjsq8" path="res://scenes/main_menu_button.gd" id="3_cwbie"]
 [ext_resource type="Texture2D" uid="uid://ouifj80io66c" path="res://Assets/Images/MainMenu.Button_Schwarz.png" id="3_u6nxt"]
+[ext_resource type="Texture2D" uid="uid://r7rqhjvrimd7" path="res://Assets/Images/Background/Highscore.Button.png" id="5_ifnbp"]
+[ext_resource type="Texture2D" uid="uid://hsqkq0bxoxkq" path="res://Assets/Images/Background/Highscore.Button_Schwarz.png" id="6_p43k7"]
+[ext_resource type="Script" uid="uid://dtgpkdh5ujlwy" path="res://scenes/highscores_button.gd" id="7_lww8v"]
 
 [node name="YouDiedScreen" type="Control" unique_id=1357783309]
 layout_mode = 3
@@ -30,10 +33,10 @@ expand_mode = 1
 
 [node name="MainMenuButton" type="TextureButton" parent="." unique_id=445324317]
 layout_mode = 0
-offset_left = 645.0
-offset_top = 748.0
-offset_right = 1234.2266
-offset_bottom = 823.0
+offset_left = 651.0
+offset_top = 752.0
+offset_right = 1240.2266
+offset_bottom = 827.0
 texture_normal = ExtResource("2_cwbie")
 texture_pressed = ExtResource("3_u6nxt")
 texture_hover = ExtResource("3_u6nxt")
@@ -41,4 +44,18 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("3_cwbie")
 
+[node name="HighscoresButton" type="TextureButton" parent="." unique_id=1168106269]
+layout_mode = 0
+offset_left = 653.0
+offset_top = 840.0
+offset_right = 1245.0833
+offset_bottom = 915.0
+texture_normal = ExtResource("5_ifnbp")
+texture_pressed = ExtResource("6_p43k7")
+texture_hover = ExtResource("6_p43k7")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("7_lww8v")
+
 [connection signal="pressed" from="MainMenuButton" to="MainMenuButton" method="_on_pressed"]
+[connection signal="pressed" from="HighscoresButton" to="HighscoresButton" method="_on_pressed"]

@@ -1,8 +1,11 @@
-[gd_scene format=3 uid="uid://dwkuiyrsax85b"]
+[gd_scene format=3 uid="uid://bwws8qhxs82p0"]
 
 [ext_resource type="Texture2D" uid="uid://r7rqhjvrimd7" path="res://Assets/Images/Background/Highscore.Button.png" id="1_bebeb"]
 [ext_resource type="Texture2D" uid="uid://bvxtrhqr8y8t6" path="res://Assets/Images/Background/Scoreborad.png" id="2_afqkp"]
 [ext_resource type="Script" uid="uid://chb8dyh6gdjv8" path="res://scenes/HighscoreBoard.gd" id="3_ijnr1"]
+[ext_resource type="Texture2D" uid="uid://cphy7p4rk6xy2" path="res://Assets/Images/MainMenu.Button_Weiß.png" id="4_kjawi"]
+[ext_resource type="Texture2D" uid="uid://ouifj80io66c" path="res://Assets/Images/MainMenu.Button_Schwarz.png" id="5_126id"]
+[ext_resource type="Script" uid="uid://cdthoog530t8p" path="res://scenes/texture_button.gd" id="6_f1vwj"]
 
 [node name="HighscoreMenu" type="Control" unique_id=216897961]
 layout_mode = 3
@@ -13,7 +16,8 @@ offset_right = 1023.0
 offset_bottom = 101.0
 
 [node name="HighscoreSign" type="Sprite2D" parent="." unique_id=1085134788]
-scale = Vector2(0.7, 0.7)
+position = Vector2(-92.00002, -43)
+scale = Vector2(0.5666666, 0.5666666)
 texture = ExtResource("1_bebeb")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1700926069]
@@ -42,7 +46,7 @@ offset_right = 1290.0
 offset_bottom = 88.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
-text = "Score"
+text = "..."
 horizontal_alignment = 1
 
 [node name="Score2" type="Label" parent="ScrollContainer/VBoxContainer/TextureRect" unique_id=411302419]
@@ -53,7 +57,7 @@ offset_right = 1290.0
 offset_bottom = 228.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
-text = "Score"
+text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -65,7 +69,7 @@ offset_right = 1290.0
 offset_bottom = 369.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
-text = "Score"
+text = "..."
 horizontal_alignment = 1
 
 [node name="Score4" type="Label" parent="ScrollContainer/VBoxContainer/TextureRect" unique_id=427594111]
@@ -76,7 +80,7 @@ offset_right = 1290.0
 offset_bottom = 513.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
-text = "Score"
+text = "..."
 horizontal_alignment = 1
 
 [node name="Score5" type="Label" parent="ScrollContainer/VBoxContainer/TextureRect" unique_id=1916016199]
@@ -87,7 +91,7 @@ offset_right = 1290.0
 offset_bottom = 657.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
-text = "Score"
+text = "..."
 horizontal_alignment = 1
 
 [node name="Score6" type="Label" parent="ScrollContainer/VBoxContainer/TextureRect" unique_id=1729969468]
@@ -98,7 +102,7 @@ offset_right = 1290.0
 offset_bottom = 801.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
-text = "Score"
+text = "..."
 horizontal_alignment = 1
 
 [node name="Score7" type="Label" parent="ScrollContainer/VBoxContainer/TextureRect" unique_id=1462756241]
@@ -109,7 +113,7 @@ offset_right = 1290.0
 offset_bottom = 945.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
-text = "Score"
+text = "..."
 horizontal_alignment = 1
 
 [node name="Score8" type="Label" parent="ScrollContainer/VBoxContainer/TextureRect" unique_id=1542272974]
@@ -120,7 +124,7 @@ offset_right = 1290.0
 offset_bottom = 1090.0449
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
-text = "Score"
+text = "..."
 horizontal_alignment = 1
 
 [node name="Score9" type="Label" parent="ScrollContainer/VBoxContainer/TextureRect" unique_id=2036057754]
@@ -131,7 +135,7 @@ offset_right = 1290.0
 offset_bottom = 1234.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
-text = "Score"
+text = "..."
 horizontal_alignment = 1
 
 [node name="Score10" type="Label" parent="ScrollContainer/VBoxContainer/TextureRect" unique_id=407822191]
@@ -142,5 +146,20 @@ offset_right = 1290.0
 offset_bottom = 1368.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 49
-text = "Score"
+text = "..."
 horizontal_alignment = 1
+
+[node name="HighscoreScreenMainMenuButton" type="TextureButton" parent="." unique_id=328046457]
+layout_mode = 0
+offset_left = -348.0
+offset_top = 17.0
+offset_right = 185.85638
+offset_bottom = 85.0
+texture_normal = ExtResource("4_kjawi")
+texture_pressed = ExtResource("5_126id")
+texture_hover = ExtResource("5_126id")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("6_f1vwj")
+
+[connection signal="pressed" from="HighscoreScreenMainMenuButton" to="HighscoreScreenMainMenuButton" method="_on_pressed"]
