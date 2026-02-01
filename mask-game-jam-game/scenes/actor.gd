@@ -14,6 +14,7 @@ var dir = 1
 var can_shoot = true
 var have_shield = false
 var current_shield = null
+var invicible = false
 
 signal puppets
 signal middle_ages
@@ -123,11 +124,13 @@ func track_shield(shield):
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	var type = "Melee"
-	if area.get_parent().type =="Melee" or area.get_parent().type == "Bullet":
+	if area.get_parent().type =="Melee" or area.get_parent().type == "Bullet" and !invicible:
 		healthbar = healthbar-2
 		lives = lives - 1
 		hit.emit(lives, healthbar)
 	#		todo: add invinsibility timer after losing a life maybe?
+		invicible = true
+		$InvincibiltyTimer.start()
 	
 func _on_timer_timeout() -> void:
 	can_shoot = true
@@ -138,3 +141,7 @@ func _on_timer_timeout() -> void:
 	#if current_shield:
 		#current_shield.queue_free()
 		#current_shield = null
+
+
+func _on_invincibilty_timer_timeout() -> void:
+	invicible = false
