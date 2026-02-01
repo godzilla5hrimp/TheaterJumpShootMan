@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://b2kxjomamv1yp" path="res://start_button.gd" id="3_nlkkf"]
 [ext_resource type="Texture2D" uid="uid://bna3echvxor73" path="res://scenes/Quit_Game.Button.png" id="5_qe12f"]
 [ext_resource type="Texture2D" uid="uid://dddljexov2a7i" path="res://scenes/Quit_Game.Button_Schwarz.png" id="6_8qtwp"]
-[ext_resource type="Script" uid="uid://cvvap7ylsqpow" path="res://end_game_button.gd" id="7_qe12f"]
+[ext_resource type="Script" path="res://end_game_button.gd" id="7_qe12f"]
 
 [node name="MainMenu" type="Control" unique_id=188981558]
 layout_mode = 3

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cbcdl2yqhrhjq"]
+
+[ext_resource type="Texture2D" uid="uid://blwjf324tvbrv" path="res://Assets/Images/Background/Game.Over_Neutral_Weiß.png" id="1_cwbie"]
+[ext_resource type="Texture2D" uid="uid://cphy7p4rk6xy2" path="res://Assets/Images/MainMenu.Button_Weiß.png" id="2_cwbie"]
+[ext_resource type="Script" uid="uid://bkfb7iw0rjsq8" path="res://scenes/main_menu_button.gd" id="3_cwbie"]
+[ext_resource type="Texture2D" uid="uid://ouifj80io66c" path="res://Assets/Images/MainMenu.Button_Schwarz.png" id="3_u6nxt"]
+
+[node name="YouDiedScreen" type="Control" unique_id=1357783309]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1867491488]
+layout_mode = 0
+offset_right = 1926.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.46666667)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=655301300]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 45.0
+offset_right = 1977.5659
+offset_bottom = 1348.0
+texture = ExtResource("1_cwbie")
+expand_mode = 1
+
+[node name="MainMenuButton" type="TextureButton" parent="." unique_id=445324317]
+layout_mode = 0
+offset_left = 645.0
+offset_top = 748.0
+offset_right = 1234.2266
+offset_bottom = 823.0
+texture_normal = ExtResource("2_cwbie")
+texture_pressed = ExtResource("3_u6nxt")
+texture_hover = ExtResource("3_u6nxt")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_cwbie")
+
+[connection signal="pressed" from="MainMenuButton" to="MainMenuButton" method="_on_pressed"]

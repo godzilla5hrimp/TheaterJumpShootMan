@@ -5,10 +5,7 @@ var current_stage = "noire"
 
 func _ready() -> void:
 	pass
-	#var player = player_scene.instantiate()
-	#player.position = $StartPos.position
-	#get_tree().root.get_node("Main/").add_child(player)
-	#print(player.position)
+	
 func spawn_player() :
 	return
 
@@ -37,3 +34,12 @@ func _on_level_manager_puppets() -> void:
 func _on_actor_hit(lives: Variant, healthbar: Variant) -> void:
 	#print ("lose hp")
 	pass
+
+func _on_actor_died() -> void:
+	print("die pop up")
+	$YouDiedScreen.visible = true
+	$YouDiedScreen.show()
+	$Actor.queue_free()
+	$EnemySpawner.queue_free()
+	$UI.change_highscore()
+	$UI/Label/Timer.stop()
