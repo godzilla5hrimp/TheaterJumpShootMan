@@ -123,17 +123,35 @@ func track_shield(shield):
 	shield.move_and_slide()
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	var type = "Melee"
 	if area.get_parent().type =="Melee" or area.get_parent().type == "Bullet" and !invicible:
 		healthbar = healthbar-2
 		lives = lives - 1
 		hit.emit(lives, healthbar)
 	#		todo: add invinsibility timer after losing a life maybe?
 		invicible = true
-		$InvincibiltyTimer.start()
+		blink_modulate()
+		#$InvincibiltyTimer.start()
 	
 func _on_timer_timeout() -> void:
 	can_shoot = true
+
+func blink_modulate():
+	$InvincibiltyTimer.start()
+	$MiddleAgesMask.modulate = Color.RED
+	$NoirMask.modulate = Color.RED
+	$PuppetMask.modulate = Color.RED
+	await get_tree().create_timer(0.2).timeout
+	$MiddleAgesMask.modulate = Color.WHITE
+	$NoirMask.modulate = Color.WHITE
+	$PuppetMask.modulate = Color.WHITE
+	await get_tree().create_timer(0.2).timeout
+	$MiddleAgesMask.modulate = Color.RED
+	$NoirMask.modulate = Color.RED
+	$PuppetMask.modulate = Color.RED
+	await get_tree().create_timer(0.2).timeout
+	$MiddleAgesMask.modulate = Color.WHITE
+	$NoirMask.modulate = Color.WHITE
+	$PuppetMask.modulate = Color.WHITE
 
 
 #func _on_shield_timer_timeout() -> void:
