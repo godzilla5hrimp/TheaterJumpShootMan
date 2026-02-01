@@ -123,7 +123,8 @@ func track_shield(shield):
 	shield.move_and_slide()
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.get_parent().name =="MeleeAttack" or area.get_parent().name == "EnemyBullet":
+	var type = "Melee"
+	if area.get_parent().type =="Melee" or area.get_parent().type == "Bullet":
 		healthbar = healthbar-2
 		lives = lives - 1
 		hit.emit(lives, healthbar)

@@ -13,7 +13,6 @@ size = Vector2(74, 68)
 
 [node name="Actor" type="CharacterBody2D" unique_id=542046403]
 z_index = 100
-collision_mask = 5
 script = ExtResource("1_x4c43")
 player_bullet = ExtResource("2_35erh")
 player_shield = ExtResource("3_w6j74")
@@ -39,6 +38,7 @@ visible = false
 shape = SubResource("RectangleShape2D_x4c43")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1677481573]
+collision_layer = 2
 collision_mask = 7
 
 [node name="HitboxShape" type="CollisionShape2D" parent="Hitbox" unique_id=1429431975]

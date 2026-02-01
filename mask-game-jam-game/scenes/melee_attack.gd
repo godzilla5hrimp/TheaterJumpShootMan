@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var type = "Melee"
 
 func _on_clean_up_timeout() -> void:
 	queue_free()
