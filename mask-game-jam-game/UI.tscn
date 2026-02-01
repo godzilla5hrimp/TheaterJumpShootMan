@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://bira16qi4x7o0" path="res://ui.gd" id="1_3b2b5"]
 [ext_resource type="Texture2D" uid="uid://cmg3geawubpn3" path="res://maskheart.png" id="2_g6l6n"]
-[ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="3_g6l6n"]
+[ext_resource type="Texture2D" uid="uid://0d83q7os6y7x" path="res://Assets/Images/Masken/Maske-Mittelalter-test.png" id="3_0mc3e"]
+[ext_resource type="Texture2D" uid="uid://d18lhpwwl1582" path="res://Assets/Images/Masken/Art_Maske_Puppe.png" id="4_2n5f6"]
 [ext_resource type="Texture2D" uid="uid://fnathg2snt3i" path="res://Score.Hintegrund.png" id="4_qui0h"]
+[ext_resource type="Texture2D" uid="uid://cfgj5oumktonn" path="res://Assets/Images/Masken/Schwarz_Wei_Maske.png" id="5_27c8x"]
 
 [node name="Control" type="Control" unique_id=192384161]
 layout_mode = 3
@@ -61,20 +63,23 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="MaskSwapBlockmask" type="Sprite2D" parent="Mask Swap UI" unique_id=68561277]
-modulate = Color(1, 0, 0, 1)
 position = Vector2(1600, 120)
-scale = Vector2(1.4, 1.4)
-texture = ExtResource("3_g6l6n")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_0mc3e")
+region_enabled = true
+region_rect = Rect2(2840, 464, 544, 528)
 
 [node name="MaskSwapMovemask" type="Sprite2D" parent="Mask Swap UI" unique_id=264515319]
-modulate = Color(0, 0, 1, 1)
 position = Vector2(1450, 140)
-texture = ExtResource("3_g6l6n")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_2n5f6")
 
 [node name="MaskSwapAttackmask" type="Sprite2D" parent="Mask Swap UI" unique_id=1081555142]
-modulate = Color(0, 1, 0, 1)
 position = Vector2(1750, 140)
-texture = ExtResource("3_g6l6n")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_27c8x")
+region_enabled = true
+region_rect = Rect2(1832, 1456, 688, 904)
 
 [node name="Score_hintegrund" type="Sprite2D" parent="." unique_id=1399898029]
 position = Vector2(963.9375, 180)

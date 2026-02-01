@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bqnn7bvunbej4" path="res://scenes/melee_attack.tscn" id="3_cuegt"]
 [ext_resource type="Texture2D" uid="uid://b4lovuxv4q7uc" path="res://Assets/Images/character/NoireEnemy.png" id="4_cuegt"]
 [ext_resource type="Texture2D" uid="uid://cissh3a6pcb83" path="res://Assets/Images/Ritter.png" id="5_wm70f"]
+[ext_resource type="Texture2D" uid="uid://cj2vohynw86un" path="res://Assets/Images/character/Puppet.png" id="6_ve544"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md22f"]
 size = Vector2(224, 144)
@@ -22,12 +23,18 @@ melee_scene = ExtResource("3_cuegt")
 visible = false
 texture = ExtResource("4_cuegt")
 region_enabled = true
-region_rect = Rect2(1760, 616, 224, 296)
+region_rect = Rect2(2016, 616, 216, 296)
 
 [node name="MiddleAgesMelee" type="Sprite2D" parent="." unique_id=1825537361]
+visible = false
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_wm70f")
 region_rect = Rect2(2984, 64, 1400, 2160)
+
+[node name="Puppet" type="Sprite2D" parent="." unique_id=924097517]
+texture = ExtResource("6_ve544")
+region_enabled = true
+region_rect = Rect2(48, 480, 176, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185468729]
 position = Vector2(0, 72)

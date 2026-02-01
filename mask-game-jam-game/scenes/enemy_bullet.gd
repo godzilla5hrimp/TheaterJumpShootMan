@@ -8,6 +8,8 @@ const SPEED = 600.0
 func _physics_process(delta: float) -> void:
 	
 	velocity.x = dir * SPEED
+	if dir <= 0:
+		$Sprite2D.flip_h = true
 	move_and_slide()
 
 

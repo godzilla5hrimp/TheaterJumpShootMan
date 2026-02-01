@@ -65,6 +65,7 @@ func _on_attack_timer_timeout() -> void:
 		var attack = melee_scene.instantiate()
 		attack.global_position = position
 		attack.global_position.x = attack.global_position.x + (dir*150)
+		attack.dir = dir
 		attack.z_index = z_index
 		get_tree().root.get_node("Main/LevelManager").add_child(attack)
 		get_tree().root.get_node("Main/MusicManager/EnemyMelee").play()
@@ -73,9 +74,15 @@ func change_style(enemy_type):
 	if enemy_type == "noire":
 		$MiddleAgesMelee.hide()
 		$NoireShooter.show()
+		$Puppet.hide()
 	if enemy_type == "middle_ages":
 		$MiddleAgesMelee.show()
 		$NoireShooter.hide()
+		$Puppet.hide()
+	if enemy_type == "puppets":
+		$MiddleAgesMelee.show()
+		$NoireShooter.hide()
+		$Puppet.show()
 
 
 func calc_dmg():
