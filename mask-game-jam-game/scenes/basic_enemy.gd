@@ -15,6 +15,7 @@ var shoot_count = 0
 var health = 2
 
 func _ready():
+	#aget_tree().root.get_node("Main/MusicManager").bus("MiddleAgesMusic").mute()
 	if position.x <= 0:
 		dir = 1
 	else:
