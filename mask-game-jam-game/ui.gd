@@ -1,10 +1,10 @@
 extends Control
 var PosCurrentMask = Vector2(1600,110)
-var SizeCurrentMask = Vector2(1.4,1.4)
+var SizeCurrentMask = Vector2(0.4,0.4)
 var PosPreviousMask = Vector2(1450,130)
-var SizePreviousMask = Vector2(1,1)
+var SizePreviousMask = Vector2(0.2,0.2)
 var PosNextMask = Vector2(1750,130)
-var SizeNextMask = Vector2(1,1)
+var SizeNextMask = Vector2(0.2,0.2)
 var Score := 0
 var ElapsedTime = 0
 var Highscore := 0
