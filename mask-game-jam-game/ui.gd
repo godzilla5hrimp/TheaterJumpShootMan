@@ -29,7 +29,8 @@ func _ready() -> void:
 		highscores = data["highscores"]
 		highscores.sort()
 		print (highscores)
-		Highscore = highscores [-1]
+		if highscores.size() >0:
+			Highscore = highscores [-1]
 		$HighscoreLabel.text = "Highscore: " + str(Highscore)
 	else:
 		highscores = []
@@ -42,7 +43,6 @@ func _process(delta: float) -> void:
 		var data := {
 			"highscores": highscores
 		}
-		print("data: ",data)
 		file.store_string(JSON.stringify(data))
 		file.close()
 		print("data saved")
@@ -64,8 +64,6 @@ func _on_actor_hit(lives: Variant, healthbar: Variant) -> void:
 
 
 func _on_actor_mask_changed(mask_changed: Variant) -> void:
-	#eprint ("movemask")
-	#print (mask_changed)
 	if mask_changed == "block":
 		$"Mask Swap UI/MaskSwapBlockmask".position = PosCurrentMask #block/Midevial
 		$"Mask Swap UI/MaskSwapBlockmask".scale = SizeCurrentMask #block/Midevial
@@ -107,6 +105,7 @@ func _on_timer_timeout() -> void:
 	
 func change_highscore():
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	highscores.append(Score)
 	var data := {
 			"highscores": highscores
 		}

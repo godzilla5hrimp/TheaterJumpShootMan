@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxqjpbh2qc1aa"
-path="res://.godot/imported/Start.Button.png-b1fe44b27df7c8f1f3ba45c8af8f501b.ctex"
+uid="uid://dlv8e1ghukiho"
+path="res://.godot/imported/Mittelalter_fass.png-1c28b626cf9ee4fb21d2736c527bc09d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Start.Button.png"
-dest_files=["res://.godot/imported/Start.Button.png-b1fe44b27df7c8f1f3ba45c8af8f501b.ctex"]
+source_file="res://Assets/Images/Background/Mittelalter_fass.png"
+dest_files=["res://.godot/imported/Mittelalter_fass.png-1c28b626cf9ee4fb21d2736c527bc09d.ctex"]
 
 [params]
 

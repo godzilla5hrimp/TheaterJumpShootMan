@@ -25,8 +25,10 @@ func spawn_enemy():
 			enemy.global_position = Vector2(-140.0, 600.0)
 		if choose_pos == 1:
 			enemy.global_position = Vector2(-140.0, 700.0)
+			enemy.z_index = 5
 		if choose_pos == 2:
 			enemy.global_position = Vector2(-140.0, 800.0)
+			enemy.z_index = 6
 
 		left = false
 	elif left == false:
@@ -34,8 +36,10 @@ func spawn_enemy():
 			enemy.global_position = Vector2(2053.0, 600.0)
 		if choose_pos == 1:
 			enemy.global_position = Vector2(2053.0, 700.0)
+			enemy.z_index = 5
 		if choose_pos == 2:
 			enemy.global_position = Vector2(2053.0, 800.0)
+			enemy.z_index = 6
 		left = true
 	get_tree().root.get_node("Main/LevelManager").add_child(enemy)
 func _on_timer_timeout() -> void:

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dl801mw4vw0" path="res://Assets/Images/Background/Stage_Mittelalter-01-31.jpg" id="1_d0jf6"]
 [ext_resource type="PackedScene" uid="uid://dpd5n25ohtpov" path="res://scenes/base_level_col.tscn" id="2_d0jf6"]
 [ext_resource type="Texture2D" uid="uid://b27dbcntok30x" path="res://Assets/Images/Background/Mittelalter_seitenvorhaenger.png" id="2_f3emy"]
+[ext_resource type="Texture2D" uid="uid://dlv8e1ghukiho" path="res://Assets/Images/Background/Mittelalter_fass.png" id="2_xya60"]
 
 [node name="MiddleAges" type="Node2D" unique_id=403992491]
 
@@ -10,6 +11,11 @@
 z_index = -1
 texture = ExtResource("1_d0jf6")
 centered = false
+
+[node name="Barrel" type="Sprite2D" parent="." unique_id=102127399]
+z_index = 4
+position = Vector2(1656, 648)
+texture = ExtResource("2_xya60")
 
 [node name="Foreground" type="Sprite2D" parent="." unique_id=311628625]
 z_index = 10

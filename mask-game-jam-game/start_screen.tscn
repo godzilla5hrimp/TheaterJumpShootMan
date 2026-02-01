@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://3ra7tku82tgi"]
+
+[ext_resource type="Texture2D" uid="uid://dpfvqwkc7ffi7" path="res://titlescreen1.png" id="1_afy8x"]
+[ext_resource type="Texture2D" uid="uid://cxqjpbh2qc1aa" path="res://Start.Button.png" id="2_k1na2"]
+[ext_resource type="Texture2D" uid="uid://dx6qyge1k2dvc" path="res://End.Button.png" id="3_vdywr"]
+
+[node name="StartScreen" type="Node2D" unique_id=1531923578]
+
+[node name="StartBackground" type="Sprite2D" parent="." unique_id=530960986]
+position = Vector2(961.2499, 536.00006)
+scale = Vector2(1.6487067, 1.6463414)
+texture = ExtResource("1_afy8x")
+
+[node name="Start_button" type="Button" parent="." unique_id=2009549528]
+offset_left = 206.0
+offset_top = 535.0
+offset_right = 1635.0
+offset_bottom = 750.6172
+scale = Vector2(0.2948628, 0.32638848)
+icon = ExtResource("2_k1na2")
+
+[node name="End_button" type="Sprite2D" parent="." unique_id=1579593460]
+position = Vector2(418.5, 717)
+scale = Vector2(0.29627022, 0.32222205)
+texture = ExtResource("3_vdywr")
