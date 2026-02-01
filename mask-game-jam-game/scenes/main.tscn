@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cbcdl2yqhrhjq" path="res://scenes/you_died_screen.tscn" id="7_o6xl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tefeu"]
-size = Vector2(1922, 391)
+size = Vector2(1922, 652)
 
 [node name="Main" type="Node2D" unique_id=1833633627]
 script = ExtResource("1_0wfyh")
@@ -23,7 +23,7 @@ visible = false
 z_index = 500
 
 [node name="Actor" parent="." unique_id=542046403 instance=ExtResource("4_jyhfs")]
-position = Vector2(995, 484)
+position = Vector2(956, 786)
 
 [node name="LevelManager" parent="." unique_id=151953731 instance=ExtResource("2_0wfyh")]
 
@@ -44,7 +44,7 @@ position = Vector2(719, 351)
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1631205927]
-position = Vector2(961, 195.5)
+position = Vector2(961, 326)
 shape = SubResource("RectangleShape2D_tefeu")
 
 [connection signal="died" from="Actor" to="." method="_on_actor_died"]
