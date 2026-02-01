@@ -72,11 +72,17 @@ func get_points_enemy():
 	print("YAY POINTS")
 	Score += 10
 	$Label.text = "Score: " + str(Score)
+	if Score > Highscore:
+		Highscore = Score
+		$HighscoreLabel.text = "Highscore: " + str(Score)
 
 func _on_timer_timeout() -> void:
 	ElapsedTime +=1
 	Score += 5 + (.3*ElapsedTime)
 	$Label.text = "Score: " + str(Score)
+	if Score > Highscore:
+		Highscore = Score
+		$HighscoreLabel.text = "Highscore: " + str(Score)
 	
 func change_highscore():
 	if Score > Highscore:
