@@ -90,4 +90,5 @@ func _on_actor_puppets() -> void:
 	delete_level()
 	current_scene = puppet_scene.instantiate()
 	get_tree().root.add_child.call_deferred(current_scene)
+	change_enemy_to_puppets()
 	emit_signal("puppets")
