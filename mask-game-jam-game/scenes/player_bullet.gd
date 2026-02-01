@@ -1,4 +1,5 @@
 extends CharacterBody2D
+var type = "PlayerBullet"
 
 const SPEED = 600.0
 @export var dir = 1

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d6glksavwbwc"]
 
 [ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="1_d2qol"]
-[ext_resource type="Script" uid="uid://qvsn0uy8dc54" path="res://scenes/player_bullet.gd" id="1_qx7rs"]
+[ext_resource type="Script" uid="uid://dxm3gwax322o0" path="res://scenes/enemy_bullet.gd" id="1_qx7rs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2qol"]
 size = Vector2(128, 128)
@@ -12,7 +12,7 @@ size = Vector2(128, 126)
 [node name="EnemyBullet" type="CharacterBody2D" unique_id=879922266]
 scale = Vector2(0.5, 0.5)
 collision_layer = 8
-collision_mask = 2
+collision_mask = 0
 script = ExtResource("1_qx7rs")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1320172626]
@@ -23,10 +23,12 @@ texture = ExtResource("1_d2qol")
 shape = SubResource("RectangleShape2D_d2qol")
 
 [node name="CleanUp" type="Timer" parent="." unique_id=1238987220]
-wait_time = 5.0
+wait_time = 0.2
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2080996842]
+collision_layer = 5
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=921005529]
 position = Vector2(0, -1)

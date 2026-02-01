@@ -2,12 +2,18 @@
 
 [ext_resource type="Texture2D" uid="uid://cq3v8e2ecks4w" path="res://Assets/Images/Background/Hintegrund_Noir.png" id="1_3hkan"]
 [ext_resource type="PackedScene" uid="uid://dpd5n25ohtpov" path="res://scenes/base_level_col.tscn" id="2_3hkan"]
+[ext_resource type="Texture2D" uid="uid://d3yhfjjgt1ppl" path="res://Assets/Images/Background/Buhne.Noir.Vorhang.png" id="2_7w07y"]
 
 [node name="Noire" type="Node2D" unique_id=1786108051]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1288383011]
 z_index = -1
 texture = ExtResource("1_3hkan")
+centered = false
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=1620697048]
+z_index = 10
+texture = ExtResource("2_7w07y")
 centered = false
 
 [node name="BaseLevelCol" parent="." unique_id=1506606377 instance=ExtResource("2_3hkan")]

@@ -4,9 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://d6glksavwbwc" path="res://scenes/enemy_bullet.tscn" id="2_fn5nn"]
 [ext_resource type="PackedScene" uid="uid://bqnn7bvunbej4" path="res://scenes/melee_attack.tscn" id="3_cuegt"]
 [ext_resource type="Texture2D" uid="uid://b4lovuxv4q7uc" path="res://Assets/Images/character/NoireEnemy.png" id="4_cuegt"]
+[ext_resource type="Texture2D" uid="uid://cissh3a6pcb83" path="res://Assets/Images/Ritter.png" id="5_wm70f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_md22f"]
 size = Vector2(224, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm70f"]
+size = Vector2(136, 248)
 
 [node name="BasicEnemy" type="CharacterBody2D" unique_id=1638890085 groups=["enemies"]]
 collision_layer = 0
@@ -14,17 +18,23 @@ script = ExtResource("1_md22f")
 bullet_scene = ExtResource("2_fn5nn")
 melee_scene = ExtResource("3_cuegt")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=180272811]
+[node name="NoireShooter" type="Sprite2D" parent="." unique_id=180272811]
+visible = false
 texture = ExtResource("4_cuegt")
 region_enabled = true
 region_rect = Rect2(1760, 616, 224, 296)
+
+[node name="MiddleAgesMelee" type="Sprite2D" parent="." unique_id=1825537361]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_wm70f")
+region_rect = Rect2(2984, 64, 1400, 2160)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185468729]
 position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_md22f")
 
 [node name="Despawn" type="Timer" parent="." unique_id=347487592]
-wait_time = 10.0
+wait_time = 15.0
 autostart = true
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=206793698]
@@ -36,9 +46,19 @@ wait_time = 0.2
 one_shot = true
 
 [node name="ShooterTimer" type="Timer" parent="." unique_id=1908833041]
-wait_time = 0.3
+wait_time = 100.0
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1076694045]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=374010916]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_wm70f")
+debug_color = Color(0.9626915, 0.19594106, 0, 0.41960785)
 
 [connection signal="timeout" from="Despawn" to="." method="_on_despawn_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="WaitTimerMelee" to="." method="_on_wait_timer_melee_timeout"]
 [connection signal="timeout" from="ShooterTimer" to="." method="_on_shooter_timer_timeout"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

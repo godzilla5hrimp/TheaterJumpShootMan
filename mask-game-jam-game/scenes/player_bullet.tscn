@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c57vtak1er1ga"]
 
-[ext_resource type="Script" uid="uid://qvsn0uy8dc54" path="res://scenes/player_bullet.gd" id="1_46jqs"]
+[ext_resource type="Script" uid="uid://dff6o2wcwb1o5" path="res://scenes/player_bullet.gd" id="1_46jqs"]
 [ext_resource type="Texture2D" uid="uid://c5luofnynhjcw" path="res://icon.svg" id="2_46jqs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2qol"]
@@ -27,7 +27,8 @@ wait_time = 5.0
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2080996842]
-collision_layer = 0
+collision_layer = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=921005529]
 position = Vector2(0, -1)

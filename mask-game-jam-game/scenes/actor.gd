@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var type = "actor"
 var healthbar = 100
 var lives = 6
 @export var speed = 400
@@ -24,6 +24,10 @@ func _ready():
 	return
 	
 func _physics_process(delta: float):
+	
+	#print("lives ", lives)
+	#print("healthbar", healthbar)
+	
 	screen_size = get_viewport().get_visible_rect().size
 	check_input(delta)
 	if current_shield:
@@ -88,7 +92,6 @@ func check_input(_delta: float):
 	if Input.is_action_pressed("player_shoot") && current_mask == 1 && can_shoot:
 		#print("SHOOTING AROUND")
 		var attack = player_bullet.instantiate()
-		print(attack)
 		attack.global_position = position + Vector2(dir*50, 0)
 		attack.dir = dir
 		get_tree().root.get_node("Main/LevelManager").add_child(attack)
@@ -119,7 +122,8 @@ func track_shield(shield):
 	shield.move_and_slide()
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.get_parent().name =="MeleeAttack" or area.get_parent().name == "EnemyBullet":
+	var type = "Melee"
+	if area.get_parent().type =="Melee" or area.get_parent().type == "Bullet":
 		healthbar = healthbar-2
 		lives = lives - 1
 		hit.emit(lives, healthbar)
