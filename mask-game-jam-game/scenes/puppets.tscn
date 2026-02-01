@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cjben3hcrhb8w" path="res://Assets/Images/Background/Buehne_Puppe_Hintergrund.png" id="1_cfkqg"]
 [ext_resource type="PackedScene" uid="uid://dpd5n25ohtpov" path="res://scenes/base_level_col.tscn" id="2_cfkqg"]
-[ext_resource type="Texture2D" uid="uid://oohy2y7qayau" path="res://Assets/Images/Background/Buehne_Puppe_Vordergrund.png" id="2_g1qap"]
+[ext_resource type="Texture2D" uid="uid://bvf6xqq2dx45m" path="res://Assets/Images/Background/Buehne_Puppe_Vordergrund_002.png" id="2_g1qap"]
 
 [node name="Puppets" type="Node2D" unique_id=1874399844]
 

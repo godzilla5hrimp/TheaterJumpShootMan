@@ -14,6 +14,7 @@ var dir = 1
 var can_shoot = true
 var have_shield = false
 var current_shield = null
+var invicible = false
 
 signal puppets
 signal middle_ages
@@ -24,7 +25,6 @@ func _ready():
 	return
 	
 func _physics_process(delta: float):
-	
 	#print("lives ", lives)
 	#print("healthbar", healthbar)
 	
@@ -102,8 +102,8 @@ func check_input(_delta: float):
 		have_shield = true
 		current_shield = player_shield.instantiate()
 		#$ShieldTimer.start() 
-		current_shield.global_position = position + Vector2(dir*50, 0)
-		get_tree().root.get_node("Main/LevelManager").add_child(current_shield)
+		#current_shield.global_position = position + Vector2(dir*50, 0)
+		get_tree().root.get_node("Main/Actor").add_child(current_shield)
 	if not Input.is_action_pressed("player_shield") and have_shield:
 		have_shield = false
 		if current_shield:
@@ -113,8 +113,8 @@ func check_input(_delta: float):
 		velocity = velocity.normalized() * speed
 	if current_shield:
 		current_shield.global_position = position + Vector2(dir * 50, 0)
-		var sprite := current_shield.get_node("Sprite2D") as Sprite2D
-		sprite.flip_h = (dir == 1)
+		#var sprite := current_shield.get_node("Sprite2D") as Sprite2D
+		#sprite.flip_h = (dir == 1)
 	move_and_slide()
 
 func track_shield(shield):
@@ -122,15 +122,35 @@ func track_shield(shield):
 	shield.move_and_slide()
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	var type = "Melee"
-	if area.get_parent().type =="Melee" or area.get_parent().type == "Bullet":
+	if (area.get_parent().type =="Melee" or area.get_parent().type == "Bullet") and !invicible:
 		healthbar = healthbar-2
 		lives = lives - 1
 		hit.emit(lives, healthbar)
 	#		todo: add invinsibility timer after losing a life maybe?
+		invicible = true
+		blink_modulate()
+		#$InvincibiltyTimer.start()
 	
 func _on_timer_timeout() -> void:
 	can_shoot = true
+
+func blink_modulate():
+	$InvincibiltyTimer.start()
+	$MiddleAgesMask.modulate = Color.RED
+	$NoirMask.modulate = Color.RED
+	$PuppetMask.modulate = Color.RED
+	await get_tree().create_timer(0.2).timeout
+	$MiddleAgesMask.modulate = Color.WHITE
+	$NoirMask.modulate = Color.WHITE
+	$PuppetMask.modulate = Color.WHITE
+	await get_tree().create_timer(0.2).timeout
+	$MiddleAgesMask.modulate = Color.RED
+	$NoirMask.modulate = Color.RED
+	$PuppetMask.modulate = Color.RED
+	await get_tree().create_timer(0.2).timeout
+	$MiddleAgesMask.modulate = Color.WHITE
+	$NoirMask.modulate = Color.WHITE
+	$PuppetMask.modulate = Color.WHITE
 
 
 #func _on_shield_timer_timeout() -> void:
@@ -138,3 +158,7 @@ func _on_timer_timeout() -> void:
 	#if current_shield:
 		#current_shield.queue_free()
 		#current_shield = null
+
+
+func _on_invincibilty_timer_timeout() -> void:
+	invicible = false
