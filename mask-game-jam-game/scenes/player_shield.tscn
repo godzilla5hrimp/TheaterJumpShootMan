@@ -29,10 +29,10 @@ texture = ExtResource("2_macnl")
 wait_time = 0.2
 autostart = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=954399201]
+[node name="Hitbox" type="Area2D" parent="." unique_id=954399201]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1663264541]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1663264541]
 position = Vector2(8.666666, 59.33334)
 shape = SubResource("RectangleShape2D_qm6g2")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_area_2d_area_entered"]
