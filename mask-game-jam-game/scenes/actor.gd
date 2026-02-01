@@ -25,7 +25,6 @@ func _ready():
 	return
 	
 func _physics_process(delta: float):
-	
 	#print("lives ", lives)
 	#print("healthbar", healthbar)
 	
@@ -123,7 +122,7 @@ func track_shield(shield):
 	shield.move_and_slide()
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
-	if area.get_parent().type =="Melee" or area.get_parent().type == "Bullet" and !invicible:
+	if (area.get_parent().type =="Melee" or area.get_parent().type == "Bullet") and !invicible:
 		healthbar = healthbar-2
 		lives = lives - 1
 		hit.emit(lives, healthbar)
