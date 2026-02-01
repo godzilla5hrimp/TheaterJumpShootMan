@@ -102,8 +102,8 @@ func check_input(_delta: float):
 		have_shield = true
 		current_shield = player_shield.instantiate()
 		#$ShieldTimer.start() 
-		current_shield.global_position = position + Vector2(dir*50, 0)
-		get_tree().root.get_node("Main/LevelManager").add_child(current_shield)
+		#current_shield.global_position = position + Vector2(dir*50, 0)
+		get_tree().root.get_node("Main/Actor").add_child(current_shield)
 	if not Input.is_action_pressed("player_shield") and have_shield:
 		have_shield = false
 		if current_shield:
@@ -113,8 +113,8 @@ func check_input(_delta: float):
 		velocity = velocity.normalized() * speed
 	if current_shield:
 		current_shield.global_position = position + Vector2(dir * 50, 0)
-		var sprite := current_shield.get_node("Sprite2D") as Sprite2D
-		sprite.flip_h = (dir == 1)
+		#var sprite := current_shield.get_node("Sprite2D") as Sprite2D
+		#sprite.flip_h = (dir == 1)
 	move_and_slide()
 
 func track_shield(shield):
