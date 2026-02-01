@@ -36,7 +36,11 @@ func _ready() -> void:
 			scorearray = $".".get_children()
 			for i in highscores.size():
 				print(i)
+				#scorearray[i].set_horizontal_alignment(1)
 				scorearray[i].text = "Highscore: " + str(highscores[i])
+			for j in range(highscores.size(), scorearray.size()):
+				scorearray[j].text = "..."
+				#scorearray[j].set_horizontal_alignment(1)
 			#for e in scorearray.size(): 
 				#if highscores.size() < 10 :
 					#return
