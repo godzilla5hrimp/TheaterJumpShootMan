@@ -4,8 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://2b6ryg8edck0" path="res://scenes/Start.Button.png" id="2_glbon"]
 [ext_resource type="Texture2D" uid="uid://bvmk5kx6prc72" path="res://scenes/Start.Button_Schwarz.png" id="3_glbon"]
 [ext_resource type="Script" uid="uid://b2kxjomamv1yp" path="res://start_button.gd" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://r7rqhjvrimd7" path="res://Assets/Images/Background/Highscore.Button.png" id="5_0o4t1"]
 [ext_resource type="Texture2D" uid="uid://bna3echvxor73" path="res://scenes/Quit_Game.Button.png" id="5_qe12f"]
+[ext_resource type="Texture2D" uid="uid://hsqkq0bxoxkq" path="res://Assets/Images/Background/Highscore.Button_Schwarz.png" id="6_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://dddljexov2a7i" path="res://scenes/Quit_Game.Button_Schwarz.png" id="6_8qtwp"]
+[ext_resource type="Script" path="res://highscore_button.gd" id="7_j5v2v"]
 [ext_resource type="Script" uid="uid://cvvap7ylsqpow" path="res://end_game_button.gd" id="7_qe12f"]
 [ext_resource type="Texture2D" uid="uid://bht3vw4vt3jhl" path="res://Assets/Images/Scene.Breaker_Wei_Logo.png" id="8_dy7ct"]
 
@@ -24,22 +27,34 @@ texture = ExtResource("1_8qtwp")
 
 [node name="StartButton" type="TextureButton" parent="." unique_id=1384752645]
 layout_mode = 0
-offset_left = 178.0
-offset_top = 624.0
-offset_right = 1599.0
-offset_bottom = 804.0
+offset_left = 200.00002
+offset_top = 544.0
+offset_right = 1621.0
+offset_bottom = 724.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("2_glbon")
 texture_pressed = ExtResource("3_glbon")
 texture_hover = ExtResource("3_glbon")
 script = ExtResource("3_nlkkf")
 
+[node name="HighscoreButton" type="TextureButton" parent="." unique_id=1945398107]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 616.0
+offset_right = 1620.0
+offset_bottom = 796.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("5_0o4t1")
+texture_pressed = ExtResource("6_0k4wn")
+texture_hover = ExtResource("6_0k4wn")
+script = ExtResource("7_j5v2v")
+
 [node name="EndGameButton" type="TextureButton" parent="." unique_id=203865834]
 layout_mode = 0
-offset_left = 177.0
-offset_top = 713.0
-offset_right = 1599.0
-offset_bottom = 894.0
+offset_left = 200.0
+offset_top = 688.0
+offset_right = 1622.0
+offset_bottom = 869.0
 scale = Vector2(0.3, 0.3)
 texture_normal = ExtResource("5_qe12f")
 texture_pressed = ExtResource("6_8qtwp")
@@ -52,4 +67,5 @@ scale = Vector2(0.5948277, 0.59482765)
 texture = ExtResource("8_dy7ct")
 
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
+[connection signal="pressed" from="HighscoreButton" to="HighscoreButton" method="_on_pressed"]
 [connection signal="pressed" from="EndGameButton" to="EndGameButton" method="_on_pressed"]
